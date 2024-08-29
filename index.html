@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Playlist</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .player{
+            position: center;
+            text-align: bottomn left;
+    </style>
 </head>
 <body>
     <div id="playlist">
@@ -14,10 +19,12 @@
         </ul>
         <button id="shuffleBtn">Shuffle</button>
     </div>
+    <div class="player">
     <audio id="audioPlayer" controls>
         <source id="audioSource" src="" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>
