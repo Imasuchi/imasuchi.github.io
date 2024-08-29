@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Playlist</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Music Playlist</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <div id="playlist">
         <h1>My Playlist</h1>
-    </header>
-    <main>
-        <section id="playlist">
-            <h2>My Favorite Videos</h2>
-            <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A?si=EnqOmJgrGtOrnAux" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Playlist</p>
-    </footer>
+        <ul id="songList">
+            <!-- Songs will be added here dynamically -->
+        </ul>
+        <button id="shuffleBtn">Shuffle</button>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
