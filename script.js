@@ -57,6 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSongList();
     audioPlayer.src = songs[currentSongIndex].file;
 });
-// Initialize the page
-populateSongList();
-audioPlayer.src = songs[currentSongIndex].file;
