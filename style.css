@@ -40,6 +40,6 @@ body {
     display: block;
     position: absolute;
     bottom: 1;
-    left: 50%;
+    left: 100%;
     transform: translateX(-50%);
 }
