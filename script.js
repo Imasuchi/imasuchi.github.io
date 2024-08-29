@@ -1,9 +1,9 @@
 const audioPlayer = document.getElementById('audio-player');
 const songSelect = document.getElementById('song-select');
 const songs = [
-    { name: 'Song 1', file: 'From the Start.mp3' },
-    { name: 'Song 2', file: 'Seventh Heaven.mp3' },
-    { name: 'Song 3', file: 'The Bird Song.mp3' }
+    { name: 'FTS', file: 'From the Start.mp3' },
+    { name: 'SH', file: 'Seventh Heaven.mp3' },
+    { name: 'TBS', file: 'The Bird Song.mp3' }
 ];
 
 let currentSongIndex = 0;
