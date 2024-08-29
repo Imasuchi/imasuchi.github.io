@@ -11,6 +11,7 @@ let shuffledSongs = [...songs];
 
 // Populate the song selection dropdown
 function populateSongSelect() {
+    songSelect.innerHTML = '<option value="">--Select a Song--</option>'; // Reset dropdown
     songs.forEach((song, index) => {
         const option = document.createElement('option');
         option.value = index;
