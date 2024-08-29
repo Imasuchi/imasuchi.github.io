@@ -19,20 +19,21 @@ body {
     padding: 0;
 }
 
-#songList li {
+#songList li:hover {
+    background-color: #f0f0f0;
     padding: 8px;
     border-bottom: 1px solid #ddd;
     cursor: pointer; /* Make it clear the list items are clickable */
 }
 
-#shuffleBtn {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+#shuffleBtn:hover {
+    background-color: #45a049;
 }
+
+#shuffleBtn:active {
+    background-color: #3e8e41;
+}
+
 
 #audioPlayer {
     margin: 0 auto;
