@@ -1,66 +1,57 @@
-const audioPlayer = document.getElementById('audio-player');
-const songList = document.getElementById('song-list');
+const audioPlayer = document.getElementById('audioPlayer');
+const songList = document.getElementById('songList');
+const shuffleBtn = document.getElementById('shuffleBtn');
+
 const songs = [
     { name: 'From the Start', file: 'audio/From the Start.mp3' },
     { name: 'Seventh Heaven', file: 'audio/Seventh Heaven.mp3' },
     { name: 'The Bird Song', file: 'audio/The Bird Song.mp3' },
     { name: 'Mimis Delivery Service', file: 'audio/Mimis Delivery Service.mp3' },
-    { name: 'Not Like us', file: 'audio/Not Like Us.mp3' }
+    { name: 'Not Like Us', file: 'audio/Not Like Us.mp3' }
 ];
 
 let currentSongIndex = 0;
 let shuffledSongs = [...songs];
 
-// Populate the song list with buttons
+// Populate the song list
 function populateSongList() {
     songList.innerHTML = ''; // Clear any existing buttons
-    songs.forEach((song, index) => {
+    shuffledSongs.forEach((song, index) => {
         const li = document.createElement('li');
-        const button = document.createElement('button');
-        button.textContent = song.name;
-        button.onclick = () => playSong(index); // Set up button click handler
-        li.appendChild(button);
+        li.textContent = song.name;
+        li.onclick = () => playSong(index);
         songList.appendChild(li);
     });
 }
 
-// Function to play the next song in the shuffled list
-function playNext() {
-    if (shuffledSongs.length === 0) return;
-
-    currentSongIndex = (currentSongIndex + 1) % shuffledSongs.length;
+// Function to play a selected song
+function playSong(index) {
+    currentSongIndex = index;
     audioPlayer.src = shuffledSongs[currentSongIndex].file;
     audioPlayer.play();
 }
 
 // Function to shuffle the songs
-function shuffle() {
-    const currentSong = shuffledSongs[currentSongIndex]; // Keep track of the current song
-    shuffledSongs = [...songs]; // Reset to original order before shuffling
+function shuffleSongs() {
+    shuffledSongs = [...songs];
     for (let i = shuffledSongs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledSongs[i], shuffledSongs[j]] = [shuffledSongs[j], shuffledSongs[i]];
     }
-    currentSongIndex = shuffledSongs.indexOf(currentSong); // Update the index of the current song
-    audioPlayer.src = shuffledSongs[currentSongIndex].file;
-    audioPlayer.play();
+    currentSongIndex = 0;
+    populateSongList(); // Repopulate list with shuffled order
+    playSong(currentSongIndex);
 }
 
-// Function to play a selected song
-function playSong(index) {
-    console.log("Playing song:", shuffledSongs[index].name);
-    currentSongIndex = index;
-    audioPlayer.src = shuffledSongs[currentSongIndex].file;
-    audioPlayer.play().catch(error => console.error("Audio play error:", error));
-}
+// Handle song ending
+audioPlayer.addEventListener('ended', () => {
+    currentSongIndex = (currentSongIndex + 1) % shuffledSongs.length;
+    playSong(currentSongIndex);
+});
 
-// Handle the audio ending
-audioPlayer.addEventListener('ended', playNext);
-
-// Initialize the page
+// Initialize the player
 document.addEventListener('DOMContentLoaded', () => {
     populateSongList();
-    audioPlayer.src = songs[currentSongIndex].file;
-    // Optionally play the initial song
-    // audioPlayer.play();
+    shuffleBtn.addEventListener('click', shuffleSongs);
+    audioPlayer.src = shuffledSongs[currentSongIndex].file;
 });
