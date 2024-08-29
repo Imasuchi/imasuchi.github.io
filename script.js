@@ -48,9 +48,10 @@ function shuffle() {
 
 // Function to play a selected song
 function playSong(index) {
+    console.log("Playing song:", shuffledSongs[index].name);
     currentSongIndex = index;
-    audioPlayer.src = songs[currentSongIndex].file;
-    audioPlayer.play();
+    audioPlayer.src = shuffledSongs[currentSongIndex].file;
+    audioPlayer.play().catch(error => console.error("Audio play error:", error));
 }
 
 // Handle the audio ending
