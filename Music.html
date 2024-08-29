@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Site</title>
+    <style>
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to dim the background */
+        z-index: 0.1;
+        pointer-events: none;
+        background-image: var(--background-image); /* Use CSS variable for random background */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    body {
+        background-color: black;
+        color: white;
+        font-family: monospace, courier;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .playlist-container {
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 2
+    }
+
+    .content {
+        display: none;
+        padding-left: 20px;
+        position: relative;
+        z-index: 2; /* Ensure the content is above the overlay */
+    }
+
+    .text {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block; /* Ensure the background only wraps around the content */
+        width: auto; /* Automatically size the background to fit the content */
+        margin-bottom: 10px; /* Add some space between text blocks */
+        z-index: 2
+    }
+    .text-2 {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 10px;
+        display: inline-block; /* Ensure the background only wraps around the content */
+        width: auto; /* Automatically size the background to fit the content */
+        margin-bottom: 10px; /* Add some space between text blocks */
+        z-index: 2
+    }
+
+    .collapsible {
+        background-color: #444;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+
+    .collapsible:hover {
+        background-color: #555;
+    }
+
+    .active {
+        background-color: #666;
+    }
+
+    .playlist {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .playlist li {
+        margin: 5px 0;
+    }
+
+    .playlist li a {
+        text-decoration: none;
+        color: #00f;
+    }
+
+    .playlist li a:hover {
+        text-decoration: underline;
+    }
+
+    audio {
+        display: none; /* Hide audio elements initially */
+        margin-top: 20px;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        font-size: 16px;
+        background-color: #444;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #666;
+    }
+</style>
+
+    <script>
+        // Check if the user is authenticated
+        if (sessionStorage.getItem("authenticated") !== "true") {
+            // Redirect to the password entry page
+            window.location.href = "password.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+
+            var audioPlayers = document.querySelectorAll("audio");
+            audioPlayers.forEach(function(audioPlayer) {
+                audioPlayer.addEventListener("ended", function() {
+                    audioPlayer.style.display = "none";
+                });
+            });
+        });
+
+        function playAudio(playerId, file) {
+            var audioPlayer = document.getElementById(playerId);
+            audioPlayer.src = file;
+            audioPlayer.style.display = "block"; // Show the audio player
+            audioPlayer.play();
+
+            // Hide the audio player when the music stops playing
+            audioPlayer.onended = function() {
+                audioPlayer.style.display = "none";
+            };
+        }
+
+        function shufflePlaylist(playlistId, playerId) {
+            var playlist = document.getElementById(playlistId);
+            var songs = playlist.getElementsByTagName('li');
+            var songArray = Array.from(songs);
+            shuffleArray(songArray);
+
+            playShuffledSongs(songArray, playerId);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function playShuffledSongs(songs, playerId) {
+    if (songs.length === 0) return;
+
+    var audioPlayer = document.getElementById(playerId);
+    var currentIndex = 0;
+
+    // Show the audio player before playing the first song
+    audioPlayer.style.display = "block";
+
+    audioPlayer.src = songs[currentIndex].querySelector('a').getAttribute('onclick').match(/'([^']+)'/g)[1].replace(/'/g, '');
+    audioPlayer.play();
+
+    audioPlayer.onended = function() {
+        currentIndex++;
+        if (currentIndex < songs.length) {
+            // Show the audio player before playing the next song
+            audioPlayer.style.display = "block";
+            
+            audioPlayer.src = songs[currentIndex].querySelector('a').getAttribute('onclick').match(/'([^']+)'/g)[1].replace(/'/g, '');
+            audioPlayer.play();
+        } else {
+            audioPlayer.style.display = "none"; // Hide the audio player when all songs are finished
+        }
+    };
+}
+
+    </script>
+</head>
+<body>
+<div class="text">
+<h2>Personal Playlists</h2>
+</div>
+<h2></h2>
+<h2></h2>
+    <!-- Playlist 1 -->
+    <div class="playlist-container">
+        <h2>Austin</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist1">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer1', 'song1.mp3')">Song 1</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer1', 'song2.mp3')">Song 2</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer1', 'song3.mp3')">Song 3</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist1', 'audioPlayer1')">Shuffle All</button>
+        <audio id="audioPlayer1" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Repeat similar structure for Playlist 2 to Playlist 10 -->
+
+    <!-- Playlist 2 -->
+    <div class="playlist-container">
+        <h2>Blake</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist2">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer2', 'song4.mp3')">Song 4</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer2', 'song5.mp3')">Song 5</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer2', 'song6.mp3')">Song 6</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist2', 'audioPlayer2')">Shuffle All</button>
+        <audio id="audioPlayer2" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist 3 -->
+    <div class="playlist-container">
+        <h2>Bryce</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist3">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer3', 'song7.mp3')">Song 7</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer3', 'song8.mp3')">Song 8</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer3', 'song9.mp3')">Song 9</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist3', 'audioPlayer3')">Shuffle All</button>
+        <audio id="audioPlayer3" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Repeat similar structure for Playlist 4 to Playlist 10 -->
+
+    <!-- Playlist 4 -->
+    <div class="playlist-container">
+        <h2>Josh</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist4">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer4', 'song10.mp3')">Song 10</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer4', 'song11.mp3')">Song 11</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer4', 'song12.mp3')">Song 12</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist4', 'audioPlayer4')">Shuffle All</button>
+        <audio id="audioPlayer4" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist 5 -->
+    <div class="playlist-container">
+        <h2>Levi</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist5">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer5', 'song13.mp3')">Song 13</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer5', 'song14.mp3')">Song 14</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer5', 'song15.mp3')">Song 15</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist5', 'audioPlayer5')">Shuffle All</button>
+        <audio id="audioPlayer5" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist 6 -->
+    <div class="playlist-container">
+        <h2>Micah</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist6">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer6', 'song16.mp3')">Song 16</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer6', 'song17.mp3')">Song 17</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer6', 'song18.mp3')">Song 18</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist6', 'audioPlayer6')">Shuffle All</button>
+        <audio id="audioPlayer6" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div class="text">
+<h2>Soundtracks</h2>
+</div>
+<h2></h2>
+<h2></h2>
+    <!-- Playlist 7 -->
+    <div class="playlist-container">
+        <h2>Hazbin Hotel</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist7">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/addict.ogg')">Addict</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/finale.ogg')">Finale</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/happy-day-in-hell.ogg')">Happy Day In Hell</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/hell-is-forever.ogg')">Hell Is Forever</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/hells-greatest-dad.ogg')">Hell's Greatest Dad</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/insane.ogg')">Insane</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/it-starts-with-sorry.ogg')">It Starts With Sorry</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/loser-baby.ogg')">Loser, Baby</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/more-than-anything.ogg')">More Than Anything</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/more-than-anything-reprise.ogg')">More Than Anything (Reprise)</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/out-for-love.ogg')">Out For Love</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/poison.ogg')">Poison</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/poison-remix.ogg')">Poison (Remix)</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/ready-for-this.ogg')">Ready For This</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/respectless.ogg')">Respectless</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/stayed-gone.ogg')">Stayed Gone</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/welcome-to-heaven.ogg')">Welcome To Heaven</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/whatever-it-takes.ogg')">Whatever It Takes</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer7', 'https://raw.githubusercontent.com/BlueYoshiBoy/The-Site/main/hazbin-hotel/you-didnt-know.ogg')">You Didn't Know</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist7', 'audioPlayer7')">Shuffle All</button>
+        <audio id="audioPlayer7" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist 8 -->
+    <div class="playlist-container">
+        <h2>Minecraft</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist8">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer8', 'song22.mp3')">Song 22</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer8', 'song23.mp3')">Song 23</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer8', 'song24.mp3')">Song 24</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist8', 'audioPlayer8')">Shuffle All</button>
+        <audio id="audioPlayer8" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist 9 -->
+    <div class="playlist-container">
+        <h2>Doom</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist9">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer9', 'song25.mp3')">Song 25</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer9', 'song26.mp3')">Song 26</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer9', 'song27.mp3')">Song 27</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist9', 'audioPlayer9')">Shuffle All</button>
+        <audio id="audioPlayer9" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist 10 -->
+    <div class="playlist-container">
+        <h2>LoreFi</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist10">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer10', 'song28.mp3')">Song 28</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer10', 'song29.mp3')">Song 29</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer10', 'song30.mp3')">Song 30</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist10', 'audioPlayer10')">Shuffle All</button>
+        <audio id="audioPlayer10" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <div class="playlist-container">
+        <h2>Playlist 11</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist11">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer11', 'song31.mp3')">Song 28</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer11', 'song32.mp3')">Song 29</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer11', 'song33.mp3')">Song 30</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist11', 'audioPlayer11')">Shuffle All</button>
+        <audio id="audioPlayer11" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <div class="playlist-container">
+        <h2>Playlist 12</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist10">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer12', 'song34.mp3')">Song 28</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer12', 'song35.mp3')">Song 29</a></li>
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer12', 'song36.mp3')">Song 30</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist12', 'audioPlayer12')">Shuffle All</button>
+        <audio id="audioPlayer12" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script src="rbg.js"></script>
+    <footer>
+    <div class="text-2">
+        <a href="index.html">Back to Homepage</a>
+        </div>
+</footer>
+</body>
+</html>
