@@ -54,4 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSongList();
     shuffleBtn.addEventListener('click', shuffleSongs);
     audioPlayer.src = shuffledSongs[currentSongIndex].file;
+    audioPlayer.play(); // Optionally play the first song on load
+});
+
+// Initialize particles.js
+particlesJS('particles-js', {
+    "particles": {
+        "number": {
+            "value": 100
+        },
+        "size": {
+            "value": 3
+        },
+        "move": {
+            "direction": "none",
+            "speed": 1
+        }
+    },
+    "interactivity": {
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "repulse"
+            }
+        }
+    }
 });
