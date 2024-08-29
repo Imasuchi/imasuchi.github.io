@@ -5,7 +5,7 @@ const songs = [
     { name: 'Seventh Heaven', file: 'audio/Seventh Heaven.mp3' },
     { name: 'The Bird Song', file: 'audio/The Bird Song.mp3' },
     { name: 'Mimis Delivery Service', file: 'audio/Mimis Delivery Service.mp3' },
-    { name: 'Not like us', file: 'audio/Not Like Us.mp3' }
+    { name: 'Not Like us', file: 'audio/Not Like Us.mp3' }
 ];
 
 let currentSongIndex = 0;
