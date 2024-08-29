@@ -1,11 +1,11 @@
 const audioPlayer = document.getElementById('audio-player');
 const songList = document.getElementById('song-list');
 const songs = [
-    { name: 'From the Start', file: 'From the Start.mp3' },
-    { name: 'Seventh Heaven', file: 'Seventh Heaven.mp3' },
-    { name: 'The Bird Song', file: 'The Bird Song.mp3' },
-    { name: 'Mimis Delivery Service', file: 'Mimis Delivery Service.mp3' },
-    { name: 'Not like us', file: 'Not Like Us.mp3' }
+    { name: 'From the Start', file: 'audio/From the Start.mp3' },
+    { name: 'Seventh Heaven', file: 'audio/Seventh Heaven.mp3' },
+    { name: 'The Bird Song', file: 'audio/The Bird Song.mp3' },
+    { name: 'Mimis Delivery Service', file: 'audio/Mimis Delivery Service.mp3' },
+    { name: 'Not like us', file: 'audio/Not Like Us.mp3' }
 ];
 
 let currentSongIndex = 0;
