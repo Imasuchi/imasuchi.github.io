@@ -1,11 +1,10 @@
 const audioPlayer = document.getElementById('audio-player');
-const songSelect = document.getElementById('song-select');
+const songList = document.getElementById('song-list'); // Reference to the song list container
 const songs = [
     { name: 'From the Start', file: 'From the Start.mp3' },
     { name: 'Seventh Heaven', file: 'Seventh Heaven.mp3' },
     { name: 'The Bird Song', file: 'The Bird Song.mp3' },
-    { name: 'Mimis Deliviery service', file: 'Mimis Delivery Service.mp3' }
-
+    { name: 'Mimis Delivery Service', file: 'Mimis Delivery Service.mp3' }
 ];
 
 let currentSongIndex = 0;
@@ -58,4 +57,6 @@ audioPlayer.addEventListener('ended', playNext);
 document.addEventListener('DOMContentLoaded', () => {
     populateSongList();
     audioPlayer.src = songs[currentSongIndex].file;
+    // Optionally play the initial song
+    // audioPlayer.play();
 });
