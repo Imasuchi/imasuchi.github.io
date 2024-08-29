@@ -1,7 +1,7 @@
 const songs = [
-    { title: 'Song 1 - Artist', file: 'audio/song1.mp3' },
-    { title: 'Song 2 - Artist', file: 'audio/song2.mp3' },
-    { title: 'Song 3 - Artist', file: 'audio/song3.mp3' },
+    { title: 'From The Start - Good Kid Next door', file: 'audio/From the Start.mp3' },
+    { title: 'Seventh Heaven - Inoha', file: 'audio/Seventh Heaven.mp3' },
+    { title: 'The Bird Song - Noah Floersch', file: 'audio/The Bird Song.mp3' },
     // Add more songs here
 ];
 
