@@ -4,7 +4,7 @@ const songs = [
     { name: 'From the Start', file: 'From the Start.mp3' },
     { name: 'Seventh Heaven', file: 'Seventh Heaven.mp3' },
     { name: 'The Bird Song', file: 'The Bird Song.mp3' },
-    { name: 'Mimis Deliviery service', file: 'Mimis delivery Service.mp3' },
+    { name: 'Mimis Deliviery service', file: 'Mimis Delivery Service.mp3' },
 
 ];
 
