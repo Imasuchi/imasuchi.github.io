@@ -1,5 +1,5 @@
 const audioPlayer = document.getElementById('audio-player');
-const songList = document.getElementById('song-list'); // Reference to the song list container
+const songList = document.getElementById('song-list');
 const songs = [
     { name: 'From the Start', file: 'From the Start.mp3' },
     { name: 'Seventh Heaven', file: 'Seventh Heaven.mp3' },
@@ -35,6 +35,7 @@ function playNext() {
 
 // Function to shuffle the songs
 function shuffle() {
+    shuffledSongs = [...songs]; // Reset to original order before shuffling
     for (let i = shuffledSongs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledSongs[i], shuffledSongs[j]] = [shuffledSongs[j], shuffledSongs[i]];
