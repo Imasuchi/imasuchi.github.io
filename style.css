@@ -22,6 +22,7 @@ body {
 #songList li {
     padding: 8px;
     border-bottom: 1px solid #ddd;
+    cursor: pointer; /* Make it clear the list items are clickable */
 }
 
 #shuffleBtn {
