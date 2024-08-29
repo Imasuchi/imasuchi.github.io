@@ -1,19 +1,29 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
+
 #playlist {
+    flex: 1; /* Allow this to grow and take up available space */
     width: 300px;
     margin: 0 auto;
     text-align: center;
 }
+
 #songList {
     list-style-type: none;
     padding: 0;
 }
+
 #songList li {
     padding: 8px;
     border-bottom: 1px solid #ddd;
 }
+
 #shuffleBtn {
     margin-top: 20px;
     padding: 10px;
@@ -21,4 +31,13 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+#audioPlayer {
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
