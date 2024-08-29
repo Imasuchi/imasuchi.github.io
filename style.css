@@ -1,46 +1,24 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
 }
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+#playlist {
+    width: 300px;
+    margin: 0 auto;
     text-align: center;
 }
-
-main {
-    padding: 1rem;
-}
-
-ul {
+#songList {
     list-style-type: none;
     padding: 0;
 }
-
-li {
-    margin-bottom: 0.5rem;
+#songList li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
 }
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+#shuffleBtn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
