@@ -35,12 +35,13 @@ function playNext() {
 
 // Function to shuffle the songs
 function shuffle() {
+    const currentSong = shuffledSongs[currentSongIndex]; // Keep track of the current song
     shuffledSongs = [...songs]; // Reset to original order before shuffling
     for (let i = shuffledSongs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledSongs[i], shuffledSongs[j]] = [shuffledSongs[j], shuffledSongs[i]];
     }
-    currentSongIndex = 0;
+    currentSongIndex = shuffledSongs.indexOf(currentSong); // Update the index of the current song
     audioPlayer.src = shuffledSongs[currentSongIndex].file;
     audioPlayer.play();
 }
