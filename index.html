@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Playlist</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="playlist">
-        <h1>My Playlist</h1>
-        <ul id="songList">
-            <!-- Songs will be added here dynamically -->
-        </ul>
-        <button id="shuffleBtn">Shuffle</button>
-    </div>
-    <audio id="audioPlayer" controls>
-        <source id="audioSource" src="" type="audio/mp3">
+    <h1>Music Player</h1>
+
+    <!-- Audio player -->
+    <audio id="audio-player" controls>
         Your browser does not support the audio element.
     </audio>
-    <script src="scripts.js"></script>
+
+    <!-- Control buttons -->
+    <button onclick="playNext()">Play Next</button>
+    <button onclick="shuffle()">Shuffle</button>
+
+    <!-- Song selection -->
+    <div id="song-selection">
+        <h2>Select a Song</h2>
+        <select id="song-select">
+            <option value="">--Select a Song--</option>
+        </select>
+        <button onclick="playSelectedSong()">Play Selected Song</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
