@@ -1,9 +1,14 @@
 const audioPlayer = document.getElementById('audio-player');
 const songSelect = document.getElementById('song-select');
 const songs = [
-    { name: 'FTS', file: 'From the Start.mp3' },
-    { name: 'SH', file: 'Seventh Heaven.mp3' },
-    { name: 'TBS', file: 'The Bird Song.mp3' }
+    { name: 'From the Start', file: 'From the Start.mp3' },
+    { name: 'Seventh Heaven', file: 'Seventh Heaven.mp3' },
+    { name: 'The Bird Song', file: 'The Bird Song.mp3' }
+    { name: 'Mimis Deliviery service', file: 'Mimis delivery Service.mp3' }
+    { name: '', file: '.mp3' }
+    { name: '', file: '.mp3' }
+    { name: '', file: '.mp3' }
+    { name: '', file: '.mp3' }
 ];
 
 let currentSongIndex = 0;
