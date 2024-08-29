@@ -9,14 +9,16 @@ const songs = [
 let currentSongIndex = 0;
 let shuffledSongs = [...songs];
 
-// Populate the song selection dropdown
-function populateSongSelect() {
-    songSelect.innerHTML = '<option value="">--Select a Song--</option>'; // Reset dropdown
+// Populate the song list with buttons
+function populateSongList() {
+    songList.innerHTML = ''; // Clear any existing buttons
     songs.forEach((song, index) => {
-        const option = document.createElement('option');
-        option.value = index;
-        option.textContent = song.name;
-        songSelect.appendChild(option);
+        const li = document.createElement('li');
+        const button = document.createElement('button');
+        button.textContent = song.name;
+        button.onclick = () => playSong(index); // Set up button click handler
+        li.appendChild(button);
+        songList.appendChild(li);
     });
 }
 
@@ -40,16 +42,13 @@ function shuffle() {
     audioPlayer.play();
 }
 
-// Function to play the selected song
-function playSelectedSong() {
-    const selectedIndex = songSelect.value;
-    if (selectedIndex !== '') {
-        currentSongIndex = parseInt(selectedIndex);
-        audioPlayer.src = songs[currentSongIndex].file;
-        audioPlayer.play();
-    }
+// Function to play a selected song
+function playSong(index) {
+    currentSongIndex = index;
+    audioPlayer.src = songs[currentSongIndex].file;
+    audioPlayer.play();
 }
 
-// Initialize
-populateSongSelect();
+// Initialize the page
+populateSongList();
 audioPlayer.src = songs[currentSongIndex].file;
