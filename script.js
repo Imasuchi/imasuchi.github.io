@@ -49,6 +49,14 @@ function playSong(index) {
     audioPlayer.play();
 }
 
+// Handle the audio ending
+audioPlayer.addEventListener('ended', playNext);
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    populateSongList();
+    audioPlayer.src = songs[currentSongIndex].file;
+});
 // Initialize the page
 populateSongList();
 audioPlayer.src = songs[currentSongIndex].file;
