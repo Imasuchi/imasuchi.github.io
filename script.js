@@ -10,6 +10,16 @@ const songs = [
     { name: "Not Like Us", src: "songs/Not Like Us.mp3" }
 ];
 
+const controlsDiv = document.querySelector('.controls');
+
+// If the shuffle button is missing, recreate and append it
+if (!document.getElementById('shuffle-btn')) {
+    const shuffleBtn = document.createElement('button');
+    shuffleBtn.id = 'shuffle-btn';
+    shuffleBtn.textContent = 'Shuffle';
+    controlsDiv.appendChild(shuffleBtn);
+}
+
 let currentSongIndex = 0;
 
 function loadSong(index) {
