@@ -10,7 +10,7 @@ const songs = [
     { name: "Not Like Us", src: "Not Like Us.mp3" }
 ];
 
-let currentSongIndex = 0;
+let currentSongIndex = 1;
 
 function loadSong(index) {
     audioPlayer.src = songs[index].src;
