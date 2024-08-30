@@ -7,7 +7,8 @@ const songs = [
     { name: "From the Start", src: "From the Start.mp3" },
     { name: "The Bird Song", src: "The Bird Song.mp3" },
     { name: "Seventh Heaven", src: "Seventh Heaven.mp3" },
-    { name: "Not Like Us", src: "Not Like Us.mp3" }
+    { name: "Not Like Us", src: "Not Like Us.mp3" },
+    { name: "Mimis Delivery Service", src "Mimis Delivery Service.mp3" }
 ];
 
 document.getElementById('play-btn').addEventListener('click', () => {
