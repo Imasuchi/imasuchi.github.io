@@ -10,21 +10,11 @@ const songs = [
     { name: "Not Like Us", src: "Not Like Us.mp3" }
 ];
 
-const controlsDiv = document.querySelector('.controls');
-
-// If the shuffle button is missing, recreate and append it
-if (!document.getElementById('shuffle-btn')) {
-    const shuffleBtn = document.createElement('button');
-    shuffleBtn.id = 'shuffle-btn';
-    shuffleBtn.textContent = 'Shuffle';
-    controlsDiv.appendChild(shuffleBtn);
-}
-
 let currentSongIndex = 0;
 
 function loadSong(index) {
     audioPlayer.src = songs[index].src;
-    audioPlayer.play();
+    audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
 
 function shuffleSong() {
@@ -49,3 +39,6 @@ function nextSong() {
 prevBtn.addEventListener('click', prevSong);
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
+
+// Load the first song on page load
+loadSong(currentSongIndex);
