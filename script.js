@@ -4,9 +4,10 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 
 const songs = [
-    { name: "Song 1", src: "songs/song1.mp3" },
-    { name: "Song 2", src: "songs/song2.mp3" },
-    { name: "Song 3", src: "songs/song3.mp3" }
+    { name: "Song 1", src: "songs/From the Start.mp3" },
+    { name: "Song 2", src: "songs/The Bird Song.mp3" },
+    { name: "Song 3", src: "songs/Seventh Heaven.mp3" },
+    { name: "Song 3", src: "songs/Not Like Us.mp3" }
 ];
 
 let currentSongIndex = 0;
