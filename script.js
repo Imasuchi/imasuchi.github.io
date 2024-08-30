@@ -40,5 +40,5 @@ prevBtn.addEventListener('click', prevSong);
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
 
-// Load the first song
+// Load the first song on page load
 loadSong(currentSongIndex);
