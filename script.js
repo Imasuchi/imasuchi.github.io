@@ -4,10 +4,10 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 
 const songs = [
-    { name: "From the Start", src: "songs/From the Start.mp3" },
-    { name: "The Bird Song", src: "songs/The Bird Song.mp3" },
-    { name: "Seventh Heaven", src: "songs/Seventh Heaven.mp3" },
-    { name: "Not Like Us", src: "songs/Not Like Us.mp3" }
+    { name: "From the Start", src: "From the Start.mp3" },
+    { name: "The Bird Song", src: "The Bird Song.mp3" },
+    { name: "Seventh Heaven", src: "Seventh Heaven.mp3" },
+    { name: "Not Like Us", src: "Not Like Us.mp3" }
 ];
 
 const controlsDiv = document.querySelector('.controls');
