@@ -9,7 +9,8 @@ const songs = [
     { name: "Seventh Heaven", src: "Seventh Heaven.mp3" },
     { name: "Not Like Us", src: "Not Like Us.mp3" },
     { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3" },
-    { name: "Vacancy!", src: "Vacancy!.mp3" }
+    { name: "Vacancy!", src: "Vacancy!.mp3" },
+    { name: "Pointless relations", src: "Pointless relations.mp3" }
     
 ];
 
