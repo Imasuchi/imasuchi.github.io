@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
-    </style>
     <title>The boys playlist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         @keyframes spin {
             from { transform: rotate(0deg); }
@@ -19,23 +17,27 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column; /* Keeps content in a column layout */
+            flex-direction: column;
             background-image: url('1600w-Y6zRMVgBvdg.webp'); /* Replace with your image file */
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .spin-image {
-            animation: spin 4s linear infinite;
-            width: 315px; /* Adjust the size as needed */
+            width: 300px; /* Adjust the size as needed */
             height: auto;
+            /* Default state without animation */
         }
 
-         h1 {
-            color: #f4f4f4; /* Replace with your desired color */
+        .spin-image.spin {
+            animation: spin 4s linear infinite;
+        }
+
+        h1 {
+            color: #007BFF;
             margin-bottom: 20px;
-            font-family: 'Arial', handjet;
+            font-family: 'Roboto', sans-serif;
         }
 
         .controls button {
@@ -56,7 +58,7 @@
 </head>
 <body>
     <audio id="audio-player" controls></audio>
-    <img src="istockphoto-481475560-612x612-removebg-preview.png" alt="Spinning Image" class="spin-image">
+    <img src="istockphoto-481475560-612x612-removebg-preview.png" alt="Spinning Image" id="spin-image" class="spin-image">
     
     <h1>Music Player</h1>
     <div class="controls">
