@@ -25,13 +25,19 @@ audio {
     margin-bottom: 20px;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* This will keep the content in a column layout */
 }
 
 .spin-image {
-  animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
 }
 
 
