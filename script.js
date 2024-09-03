@@ -2,6 +2,7 @@ const audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
+const spinImage = document.getElementById('spin-image'); // Add this line to get the image element
 
 const songs = [
     { name: "From the Start", src: "From the Start.mp3" },
@@ -12,9 +13,7 @@ const songs = [
     { name: "Vacancy!", src: "Vacancy!.mp3" },
     { name: "Pointless relations", src: "Pointless relations.mp3" },
     { name: "I WANNA BE", src: "I WANNA BE.mp3" }
-    
 ];
-
 
 let currentSongIndex = 0;
 
@@ -42,9 +41,21 @@ function nextSong() {
     loadSong(currentSongIndex);
 }
 
+function startSpinning() {
+    spinImage.classList.add('spin'); // Add the spinning class
+}
+
+function stopSpinning() {
+    spinImage.classList.remove('spin'); // Remove the spinning class
+}
+
 prevBtn.addEventListener('click', prevSong);
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
+
+audioPlayer.addEventListener('play', startSpinning); // Start spinning when audio plays
+audioPlayer.addEventListener('pause', stopSpinning); // Stop spinning when audio is paused
+audioPlayer.addEventListener('ended', stopSpinning); // Stop spinning when audio ends
 
 // Load the first song on page load
 loadSong(currentSongIndex);
