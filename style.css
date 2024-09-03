@@ -1,11 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 20px; /* Optional, for some space around the content */
 }
 
 .music-player {
@@ -14,6 +11,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: bottom;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -24,22 +22,6 @@ audio {
     width: 100%;
     margin-bottom: 20px;
 }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    flex-direction: column; /* This will keep the content in a column layout */
-}
-
-.spin-image {
-    animation: spin 4s linear infinite;
-    width: 150px; /* Adjust the size as needed */
-    height: auto;
-}
-
 
 .controls button {
     margin: 5px;
@@ -54,4 +36,18 @@ body {
 
 .controls button:hover {
     background-color: #0056b3;
+}
+
+/* Centering only the image */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spin-image {
+    animation: spin 4s linear infinite;
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
 }
