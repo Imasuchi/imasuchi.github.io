@@ -10,7 +10,8 @@ const songs = [
     { name: "Not Like Us", src: "Not Like Us.mp3" },
     { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3" },
     { name: "Vacancy!", src: "Vacancy!.mp3" },
-    { name: "Pointless relations", src: "Pointless relations.mp3" }
+    { name: "Pointless relations", src: "Pointless relations.mp3" },
+    { name: "I WANNA BE", src: "I WANNA BE.mp3" }
     
 ];
 
