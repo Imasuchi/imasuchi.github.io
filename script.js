@@ -16,6 +16,7 @@ const songs = [
 ];
 
 let currentSongIndex = 0;
+let isShuffleMode = false; // Track whether shuffle mode is active
 
 function loadSong(index) {
     audioPlayer.src = songs[index].src;
@@ -23,6 +24,7 @@ function loadSong(index) {
 }
 
 function shuffleSong() {
+    isShuffleMode = true; // Activate shuffle mode
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * songs.length);
@@ -32,13 +34,21 @@ function shuffleSong() {
 }
 
 function prevSong() {
-    currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
-    loadSong(currentSongIndex);
+    if (isShuffleMode) {
+        shuffleSong();
+    } else {
+        currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
+        loadSong(currentSongIndex);
+    }
 }
 
 function nextSong() {
-    currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
-    loadSong(currentSongIndex);
+    if (isShuffleMode) {
+        shuffleSong(); // Shuffle to the next song
+    } else {
+        currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
+        loadSong(currentSongIndex);
+    }
 }
 
 function startSpinning() {
