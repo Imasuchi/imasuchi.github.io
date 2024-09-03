@@ -5,6 +5,12 @@ body {
     padding: 20px; /* Optional, for some space around the content */
 }
 
+.spin-image {
+    animation: spin 4s linear infinite;
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+}
+
 .music-player {
     background-color: white;
     padding: 20px;
@@ -46,8 +52,4 @@ audio {
     height: 100vh;
 }
 
-.spin-image {
-    animation: spin 4s linear infinite;
-    width: 150px; /* Adjust the size as needed */
-    height: auto;
-}
+
