@@ -10,8 +10,19 @@
             to { transform: rotate(360deg); }
         }
 
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column; /* This will keep the content in a column layout */
+        }
+
         .spin-image {
             animation: spin 4s linear infinite;
+            width: 150px; /* Adjust the size as needed */
+            height: auto;
         }
     </style>
 </head>
@@ -20,7 +31,7 @@
     <audio id="audio-player" controls></audio>
     <div class="controls">
         <button id="prev-btn">Previous</button>
-        <button id="shuffle-btn">Shuffle</button> <!-- Ensure this button is here -->
+        <button id="shuffle-btn">Shuffle</button>
         <button id="next-btn">Next</button>
     </div>
 
