@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The boys playlist</title>
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spin-image {
+            animation: spin 4s linear infinite;
+        }
+    </style>
 </head>
 <body>
     <h1>Music Player</h1>
@@ -19,7 +29,6 @@
     <script src="script.js"></script>
 
     <img src="istockphoto-481475560-612x612.jpg" alt="Spinning Image" class="spin-image">
-
 
 </body>
 </html>
