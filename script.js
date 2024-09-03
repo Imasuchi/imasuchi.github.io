@@ -10,6 +10,7 @@ const songs = [
     { name: "Not Like Us", src: "Not Like Us.mp3" },
     { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3" },
     { name: "Vacancy!", src: "Vacancy!.mp3" }
+    
 ];
 
 document.getElementById('play-btn').addEventListener('click', () => {
