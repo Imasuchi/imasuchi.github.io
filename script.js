@@ -15,11 +15,6 @@ const songs = [
     
 ];
 
-document.getElementById('play-btn').addEventListener('click', () => {
-    audioPlayer.src = 'From the Start.mp3'; // Ensure this path is correct
-    audioPlayer.play().catch(error => console.error('Playback error:', error));
-});
-
 
 let currentSongIndex = 0;
 
