@@ -5,15 +5,15 @@ const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 
 const songs = [
-    { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.jpg" },
-    { name: "The Bird Song", src: "The Bird Song.mp3", img: "the-bird-song.jpg" },
-    { name: "Seventh Heaven", src: "Seventh Heaven.mp3", img: "seventh-heaven.jpg" },
+    { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.png" },
+    { name: "The Bird Song", src: "The Bird Song.mp3", img: "the-bird-song.png" },
+    { name: "Seventh Heaven", src: "Seventh Heaven.mp3", img: "seventh-heaven.png" },
     { name: "Not Like Us", src: "Not Like Us.mp3", img: "not-like-us.jpg" },
-    { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3", img: "mimis-delivery-service.jpg" },
+    { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3", img: "mimis-delivery-service.png" },
     { name: "Vacancy!", src: "Vacancy!.mp3", img: "vacancy.jpg" },
-    { name: "Pointless relations", src: "Pointless relations.mp3", img: "pointless-relations.jpg" },
+    { name: "Pointless relations", src: "Pointless relations.mp3", img: "pointless-relations.png" },
     { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.jpg" },
-    { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).jpg" }
+    { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" }
 ];
 
 let currentSongIndex = 0;
