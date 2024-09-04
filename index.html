@@ -22,18 +22,20 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            z-index: 1px;
         }
 
 body::before {
             background-image: url('record-player.png')
-            z-index: 1px;
+            background-size: cover;
+            z-index: 2px;
         }
         
         .spin-image {
             width: 317px; /* Adjust the size as needed */
             height: auto;
             /* Default state without animation */
-            z-index: 2px;
+            z-index: 3px;
         }
 
         .spin-image.spinning {
