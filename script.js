@@ -20,12 +20,14 @@ let currentSongIndex = 0;
 let isShuffleMode = false; // Track whether shuffle mode is active
 
 function loadSong(index) {
+    console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     document.getElementById('song-image').src = songs[index].img; // Update the image
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
 
 function shuffleSong() {
+    console.log('Shuffle button clicked');
     isShuffleMode = true; // Activate shuffle mode
     let randomIndex;
     do {
@@ -36,6 +38,7 @@ function shuffleSong() {
 }
 
 function prevSong() {
+    console.log('Previous button clicked');
     if (isShuffleMode) {
         shuffleSong();
     } else {
@@ -45,6 +48,7 @@ function prevSong() {
 }
 
 function nextSong() {
+    console.log('Next button clicked');
     if (isShuffleMode) {
         shuffleSong(); // Shuffle to the next song
     } else {
@@ -54,10 +58,12 @@ function nextSong() {
 }
 
 function startSpinning() {
+    console.log('Starting spin');
     spinImage.classList.add('spin');
 }
 
 function stopSpinning() {
+    console.log('Stopping spin');
     spinImage.classList.remove('spin');
 }
 
