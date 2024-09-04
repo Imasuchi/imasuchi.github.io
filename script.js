@@ -17,6 +17,7 @@ const songs = [
 ];
 
 let currentSongIndex = 0;
+let lastSongIndex = null; // To keep track of the last song played
 let isShuffleMode = false;
 
 function loadSong(index) {
@@ -33,7 +34,8 @@ function shuffleSong() {
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * songs.length);
-    } while (randomIndex === currentSongIndex);
+    } while (randomIndex === currentSongIndex || randomIndex === lastSongIndex);
+    lastSongIndex = currentSongIndex; // Update the last song index
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex);
     audioPlayer.play().catch(error => console.error('Playback error:', error));
@@ -80,11 +82,3 @@ audioPlayer.addEventListener('ended', function() {
 
 // Load the first song on page load
 loadSong(currentSongIndex);
-
-// Prevent the Shift key from affecting the playback
-window.addEventListener('keydown', function(event) {
-    if (event.key === 'Shift') {
-        event.preventDefault();
-        console.log('Shift key pressed');
-    }
-});
