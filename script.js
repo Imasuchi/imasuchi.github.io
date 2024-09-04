@@ -63,12 +63,10 @@ function nextSong() {
 }
 
 function startSpinning() {
-    spinImage.classList.add('spinning');
     spinImage.classList.remove('paused');
 }
 
 function stopSpinning() {
-    spinImage.classList.remove('spinning');
     spinImage.classList.add('paused');
 }
 
