@@ -21,9 +21,10 @@ body {
 }
 
 h1 {
-    color: #f4f4f4; /* Replace with your desired color */
-    margin-bottom: 20px;
-    font-family: 'Arial', handjet;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with some transparency */
+    color: white; /* White text color for contrast */
+    padding: 10px; /* Add some padding around the text */
+    border-radius: 5px; /* Rounded corners for a smoother look */
 }
 
 audio {
