@@ -11,7 +11,7 @@ const songs = [
     { name: "Not Like Us", src: "Not Like Us.mp3", img: "not-like-us.jpg" },
     { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3", img: "mimis-delivery-service.png" },
     { name: "Vacancy!", src: "Vacancy!.mp3", img: "vacancy.jpg" },
-    { name: "Pointless relations", src: "Pointless relations.mp3", img: "pointless-Relations.png" },
+    { name: "Pointless relations", src: "Pointless relations.mp3", img: "Pointless-Relations.png" },
     { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.jpg" },
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" }
 ];
