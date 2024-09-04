@@ -1,28 +1,29 @@
-body {
-    font-family: Arial, handjet;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px; /* Optional, for some space around the content */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    background-image: url('82qt26we28971.gif'); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .spin-image {
-    animation: spin 4s linear infinite;
-    width: 150px; /* Adjust the size as needed */
+    width: 317px; /* Adjust the size as needed */
     height: auto;
+    /* Default state without animation */
 }
 
-.music-player {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: bottom;
-    margin-bottom: 20px;
+.spin-image.spinning {
+    animation: spin 4s linear infinite;
 }
 
 h1 {
@@ -32,9 +33,11 @@ h1 {
     border-radius: 5px; /* Rounded corners for a smoother look */
 }
 
-audio {
-    width: 100%;
-    margin-bottom: 20px;
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .controls button {
@@ -42,7 +45,7 @@ audio {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -50,12 +53,4 @@ audio {
 
 .controls button:hover {
     background-color: #0056b3;
-}
-
-/* Centering only the image */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
