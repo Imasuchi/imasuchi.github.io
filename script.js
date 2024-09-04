@@ -17,17 +17,17 @@ const songs = [
 ];
 
 let currentSongIndex = 0;
-let lastSongIndex = null; // To keep track of the last song played
+let lastSongIndex = null;
 let isShuffleMode = false;
 
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image source
-    spinImage.classList.add('spinning'); // Start spinning
+    // Do not add 'spinning' class here to prevent spinning on page load
     audioPlayer.play().catch(error => console.error('Playback error:', error));
-    lastSongIndex = currentSongIndex; // Update the last song index
-    currentSongIndex = index; // Update current song index
+    lastSongIndex = currentSongIndex;
+    currentSongIndex = index;
 }
 
 function shuffleSong() {
@@ -36,7 +36,7 @@ function shuffleSong() {
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * songs.length);
-    } while (randomIndex === lastSongIndex); // Avoid repeating the last song
+    } while (randomIndex === lastSongIndex);
     loadSong(randomIndex);
 }
 
@@ -80,4 +80,5 @@ audioPlayer.addEventListener('ended', function() {
 });
 
 // Load the first song on page load
+// No need to start spinning until the song starts playing
 loadSong(currentSongIndex);
