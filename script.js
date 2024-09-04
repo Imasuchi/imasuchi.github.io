@@ -22,7 +22,7 @@ let isShuffleMode = false; // Track whether shuffle mode is active
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
-    document.getElementById('spin-image').src = songs[index].img; // Update the image
+    spinImage.src = songs[index].img; // Update the image
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
 
@@ -59,11 +59,11 @@ function nextSong() {
 }
 
 function startSpinning() {
-    spinImage.classList.remove('paused');
+    spinImage.classList.add('spinning');
 }
 
 function stopSpinning() {
-    spinImage.classList.add('paused');
+    spinImage.classList.remove('spinning');
 }
 
 prevBtn.addEventListener('click', prevSong);
