@@ -10,9 +10,9 @@ const songs = [
     { name: "Seventh Heaven", src: "Seventh Heaven.mp3", img: "seventh-heaven.png" },
     { name: "Not Like Us", src: "Not Like Us.mp3", img: "not-like-us.png" },
     { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3", img: "mimis-delivery-service.png" },
-    { name: "Vacancy!", src: "Vacancy!.mp3", img: "vacancy.jpg" },
+    { name: "Vacancy!", src: "Vacancy!.mp3", img: "vacancy.png" },
     { name: "Pointless relations", src: "Pointless relations.mp3", img: "Pointless-Relations.png" },
-    { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.jpg" },
+    { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.png" },
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" }
 ];
 
