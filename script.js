@@ -38,15 +38,7 @@ function shuffleSong() {
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex);
 }
-function prevSong() {
-    console.log('Previous button clicked');
-    if (isShuffleMode) {
-        shuffleSong();
-    } else {
-        currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
-        loadSong(currentSongIndex);
-    }
-}
+
 function nextSong() {
     console.log('Next button clicked');
     if (isShuffleMode) {
