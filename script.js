@@ -26,6 +26,8 @@ function loadSong(index) {
     spinImage.src = songs[index].img; // Update the image source
     spinImage.classList.add('spinning'); // Start spinning
     audioPlayer.play().catch(error => console.error('Playback error:', error));
+    lastSongIndex = currentSongIndex; // Update the last song index
+    currentSongIndex = index; // Update current song index
 }
 
 function shuffleSong() {
@@ -34,11 +36,8 @@ function shuffleSong() {
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * songs.length);
-    } while (randomIndex === currentSongIndex || randomIndex === lastSongIndex);
-    lastSongIndex = currentSongIndex; // Update the last song index
-    currentSongIndex = randomIndex;
-    loadSong(currentSongIndex);
-    audioPlayer.play().catch(error => console.error('Playback error:', error));
+    } while (randomIndex === lastSongIndex); // Avoid repeating the last song
+    loadSong(randomIndex);
 }
 
 function prevSong() {
@@ -46,8 +45,8 @@ function prevSong() {
     if (isShuffleMode) {
         shuffleSong();
     } else {
-        currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
-        loadSong(currentSongIndex);
+        const newIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
+        loadSong(newIndex);
     }
 }
 
@@ -56,8 +55,8 @@ function nextSong() {
     if (isShuffleMode) {
         shuffleSong();
     } else {
-        currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
-        loadSong(currentSongIndex);
+        const newIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
+        loadSong(newIndex);
     }
 }
 
