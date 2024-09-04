@@ -5,10 +5,19 @@ body {
     padding: 20px; /* Optional, for some space around the content */
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .spin-image {
     animation: spin 4s linear infinite;
     width: 150px; /* Adjust the size as needed */
     height: auto;
+}
+
+.paused {
+    animation: none; /* Stop the spinning animation */
 }
 
 .music-player {
@@ -54,5 +63,3 @@ audio {
     align-items: center;
     height: 100vh;
 }
-
-
