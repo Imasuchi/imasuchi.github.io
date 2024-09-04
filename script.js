@@ -19,6 +19,7 @@ const songs = [
 let currentSongIndex = 0;
 let lastSongIndex = null;
 let isShuffleMode = false;
+let playedSongs = [];
 
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
@@ -33,10 +34,18 @@ function loadSong(index) {
 function shuffleSong() {
     console.log('Shuffle button clicked');
     isShuffleMode = true;
+    if (playedSongs.length === songs.length) {
+        // All songs have been played, reset played songs
+        playedSongs = [];
+    }
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * songs.length);
-    } while (randomIndex === lastSongIndex);
+    } while (randomIndex === lastSongIndex || playedSongs.includes(randomIndex));
+    
+    // Mark the song as played
+    playedSongs.push(randomIndex);
+    
     loadSong(randomIndex);
 }
 
