@@ -59,13 +59,11 @@ function nextSong() {
 }
 
 function startSpinning() {
-    console.log('Starting spin');
-    spinImage.classList.add('spin');
+    spinImage.classList.remove('paused');
 }
 
 function stopSpinning() {
-    console.log('Stopping spin');
-    spinImage.classList.remove('spin');
+    spinImage.classList.add('paused');
 }
 
 prevBtn.addEventListener('click', prevSong);
