@@ -18,24 +18,33 @@
             height: 100vh;
             margin: 0;
             flex-direction: column;
-            background-image: url('82qt26we28971.gif'); /* Replace with your image file */
+            background-image: url('82qt26we28971.gif'); /* Replace with your background image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: 1px;
+            position: relative;
         }
 
-body::before {
-            background-image: url('record-player.png')
+        body::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px; /* Adjust the size as needed */
+            height: 400px; /* Adjust the size as needed */
+            background-image: url('record-player.png'); /* Replace with your image */
             background-size: cover;
-            z-index: 2px;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
         }
         
         .spin-image {
             width: 317px; /* Adjust the size as needed */
             height: auto;
-            /* Default state without animation */
-            z-index: 3px;
+            z-index: 2; /* Ensure this is above the background image */
+            position: relative; /* To ensure it follows the stacking order */
         }
 
         .spin-image.spinning {
@@ -47,6 +56,13 @@ body::before {
             color: white; /* White text color for contrast */
             padding: 10px; /* Add some padding around the text */
             border-radius: 5px; /* Rounded corners for a smoother look */
+            position: relative; /* To ensure it is above the pseudo-element */
+            z-index: 3;
+        }
+
+        .controls {
+            position: relative; /* To ensure it is above the pseudo-element */
+            z-index: 3;
         }
 
         .controls button {
