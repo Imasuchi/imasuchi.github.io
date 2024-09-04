@@ -24,7 +24,7 @@ function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image source
-    // Do not add 'spinning' class here to prevent spinning on page load
+    stopSpinning(); // Ensure the image stops spinning before starting playback
     audioPlayer.play().catch(error => console.error('Playback error:', error));
     lastSongIndex = currentSongIndex;
     currentSongIndex = index;
@@ -80,5 +80,4 @@ audioPlayer.addEventListener('ended', function() {
 });
 
 // Load the first song on page load
-// No need to start spinning until the song starts playing
 loadSong(currentSongIndex);
