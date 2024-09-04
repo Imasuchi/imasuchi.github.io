@@ -18,14 +18,12 @@ const songs = [
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
-
 function shuffleSong() {
     console.log('Shuffle button clicked');
     isShuffleMode = true;
@@ -52,14 +50,15 @@ function nextSong() {
 }
 
 function startSpinning() {
-    spinImage.style.animationPlayState = 'running'; // Continue the animation
+    spinImage.classList.add('spinning');
+    spinImage.classList.remove('paused');
 }
 
 function stopSpinning() {
-    spinImage.style.animationPlayState = 'paused'; // Pause the animation
+    spinImage.classList.remove('spinning');
+    spinImage.classList.add('paused');
 }
 
-// Event listeners
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
 audioPlayer.addEventListener('play', startSpinning);
@@ -68,6 +67,5 @@ audioPlayer.addEventListener('ended', function() {
     stopSpinning();
     nextSong(); // Automatically play the next song when the current one ends
 });
-
 // Load the first song on page load
 loadSong(currentSongIndex);
