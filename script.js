@@ -62,14 +62,6 @@ function nextSong() {
     }
 }
 
-function startSpinning() {
-    spinImage.classList.remove('paused');
-}
-
-function stopSpinning() {
-    spinImage.classList.add('paused');
-}
-
 prevBtn.addEventListener('click', prevSong);
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
