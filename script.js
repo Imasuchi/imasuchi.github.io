@@ -12,7 +12,8 @@ const songs = [
     { name: "Mimis Delivery Service", src: "Mimis Delivery Service.mp3" },
     { name: "Vacancy!", src: "Vacancy!.mp3" },
     { name: "Pointless relations", src: "Pointless relations.mp3" },
-    { name: "I WANNA BE", src: "I WANNA BE.mp3" }
+    { name: "I WANNA BE", src: "I WANNA BE.mp3" },
+    { name: "Come tell me the real way! (feat. Taiketsu)", src "Come tell me the real way! (feat. Taiketsu).mp3" }
 ];
 
 let currentSongIndex = 0;
