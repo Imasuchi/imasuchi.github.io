@@ -2,7 +2,7 @@ const audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
-const spinImage = document.getElementById('song-image');
+const spinImage = document.getElementById('spin-image');
 
 const songs = [
     { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.jpg" },
