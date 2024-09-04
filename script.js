@@ -2,7 +2,7 @@ const audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
-const spinImage = document.getElementById('spin-image');
+const spinImage = document.getElementById('spin-image'); // Single image element
 
 const songs = [
     { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.png" },
@@ -17,25 +17,26 @@ const songs = [
 ];
 
 let currentSongIndex = 0;
-let isShuffleMode = false; // Track whether shuffle mode is active
+let isShuffleMode = false;
 
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
-    spinImage.src = songs[index].img; // Update the image
+    spinImage.src = songs[index].img; // Update the image source
+    spinImage.classList.add('spinning'); // Start spinning
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
 
 function shuffleSong() {
     console.log('Shuffle button clicked');
-    isShuffleMode = true; // Activate shuffle mode
+    isShuffleMode = true;
     let randomIndex;
     do {
         randomIndex = Math.floor(Math.random() * songs.length);
     } while (randomIndex === currentSongIndex);
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex);
-    audioPlayer.play().catch(error => console.error('Playback error:', error)); // Attempt to play the song
+    audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
 
 function prevSong() {
@@ -51,7 +52,7 @@ function prevSong() {
 function nextSong() {
     console.log('Next button clicked');
     if (isShuffleMode) {
-        shuffleSong(); // Shuffle to the next song
+        shuffleSong();
     } else {
         currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
         loadSong(currentSongIndex);
