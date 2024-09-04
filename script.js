@@ -3,7 +3,6 @@ const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
-
 const songs = [
     { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.png" },
     { name: "The Bird Song", src: "The Bird Song.mp3", img: "the-bird-song.png" },
@@ -15,18 +14,15 @@ const songs = [
     { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.png" },  // Updated to PNG
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" }
 ];
-
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
-
 function shuffleSong() {
     console.log('Shuffle button clicked');
     isShuffleMode = true;
@@ -41,7 +37,6 @@ function shuffleSong() {
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex);
 }
-
 function prevSong() {
     console.log('Previous button clicked');
     if (isShuffleMode) {
@@ -51,7 +46,6 @@ function prevSong() {
         loadSong(currentSongIndex);
     }
 }
-
 function nextSong() {
     console.log('Next button clicked');
     if (isShuffleMode) {
@@ -62,16 +56,24 @@ function nextSong() {
     }
 }
 
+function startSpinning() {
+    spinImage.classList.add('spinning');
+    spinImage.classList.remove('paused');
+}
+
+function stopSpinning() {
+    spinImage.classList.remove('spinning');
+    spinImage.classList.add('paused');
+}
+
 prevBtn.addEventListener('click', prevSong);
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
-
 audioPlayer.addEventListener('play', startSpinning);
 audioPlayer.addEventListener('pause', stopSpinning);
 audioPlayer.addEventListener('ended', function() {
     stopSpinning();
     nextSong(); // Automatically play the next song when the current one ends
 });
-
 // Load the first song on page load
 loadSong(currentSongIndex);
