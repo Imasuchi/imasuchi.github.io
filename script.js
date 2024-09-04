@@ -35,7 +35,7 @@ function shuffleSong() {
     } while (randomIndex === currentSongIndex);
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex);
-    audioPlayer.play().catch(error => console.error('Playback error:', error)); // Automatically start playing
+    audioPlayer.play().catch(error => console.error('Playback error:', error)); // Attempt to play the song
 }
 
 function prevSong() {
