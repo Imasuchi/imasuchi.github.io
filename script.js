@@ -2,8 +2,7 @@ const audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
-const spinImage = document.getElementById('spin-image');
-const spinImage = document.getElementById('song-image');
+const spinImage = document.getElementById('song-image'); // Only keep this one
 
 const songs = [
     { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.jpg" },
@@ -14,7 +13,7 @@ const songs = [
     { name: "Vacancy!", src: "Vacancy!.mp3", img: "vacancy.jpg" },
     { name: "Pointless relations", src: "Pointless relations.mp3", img: "pointless-relations.jpg" },
     { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.jpg" },
-    { name: "Come tell me the real way! (feat. Taiketsu)", src "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).jpg" }
+    { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).jpg" } // Fixed the missing colon
 ];
 
 let currentSongIndex = 0;
@@ -23,11 +22,6 @@ let isShuffleMode = false; // Track whether shuffle mode is active
 function loadSong(index) {
     audioPlayer.src = songs[index].src;
     document.getElementById('song-image').src = songs[index].img; // Update the image
-    audioPlayer.play().catch(error => console.error('Playback error:', error));
-}
-
-function loadSong(index) {
-    audioPlayer.src = songs[index].src;
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
 
