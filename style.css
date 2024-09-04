@@ -16,10 +16,6 @@ body {
     height: auto;
 }
 
-.paused {
-    animation: none; /* Stop the spinning animation */
-}
-
 .music-player {
     background-color: white;
     padding: 20px;
