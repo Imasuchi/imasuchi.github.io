@@ -2,7 +2,7 @@ const audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
-const spinImage = document.getElementById('spin-image'); // Single image element
+const spinImage = document.getElementById('spin-image');
 
 const songs = [
     { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.png" },
@@ -80,3 +80,11 @@ audioPlayer.addEventListener('ended', function() {
 
 // Load the first song on page load
 loadSong(currentSongIndex);
+
+// Prevent the Shift key from affecting the playback
+window.addEventListener('keydown', function(event) {
+    if (event.key === 'Shift') {
+        event.preventDefault();
+        console.log('Shift key pressed');
+    }
+});
