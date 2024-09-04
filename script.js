@@ -67,7 +67,6 @@ function stopSpinning() {
     spinImage.classList.add('paused');
 }
 
-prevBtn.addEventListener('click', prevSong);
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
 audioPlayer.addEventListener('play', startSpinning);
