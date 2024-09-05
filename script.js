@@ -13,7 +13,8 @@ const songs = [
     { name: "Pointless relations", src: "Pointless relations.mp3", img: "Pointless-Relations.png" },
     { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
-    { name: "spectacular", src: "spectacular.mp3", img: "spectacular.png" }
+    { name: "spectacular", src: "spectacular.mp3", img: "spectacular.png" },
+    { name: "Beethoven's 5th Symphony", src: "Beethoven's 5th Symphony.mp3", img: "beethovens-5th-symphony.png" }
 ];
 let currentSongIndex = 0;
 let playedSongs = [];
