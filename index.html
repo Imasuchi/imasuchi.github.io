@@ -18,7 +18,6 @@
         background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to dim the background */
         z-index: 0.1;
         pointer-events: none;
-        background-image: var(--background-image); /* Use CSS variable for random background */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -45,7 +44,7 @@
             position: relative;
         }
 
-        body::before {
+        body::-before {
             content: '';
             position: absolute;
             top: 42%;
