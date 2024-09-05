@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User 1's Page</title>
+</head>
+<body>
+  <h1>Welcome, User 1!</h1>
+  <audio controls>
+    <source src="user1-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <form id="loginForm" onsubmit="return validateLogin()">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  
+  <button type="submit">Login</button>
+</form>
+
+</body>
+</html>
