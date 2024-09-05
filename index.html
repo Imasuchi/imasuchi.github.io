@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Boys Playlist</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+            body::before {
+
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to dim the background */
+        z-index: 0.1;
+        pointer-events: none;
+        background-image: var(--background-image); /* Use CSS variable for random background */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+    
     <style>
         @keyframes spin {
             from { transform: rotate(0deg); }
@@ -18,7 +38,7 @@
             height: 100vh;
             margin: 0;
             flex-direction: column;
-            background-image: url('82qt26we28971.gif'); /* Replace with your background image */
+            background-image: url('the-background.gif'); /* Replace with your background image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
