@@ -2,7 +2,10 @@ const audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
+const playPauseBtn = document.getElementById('play-pause-btn');
 const spinImage = document.getElementById('spin-image');
+const songNameDisplay = document.getElementById('song-name');
+
 const songs = [
     { name: "From the Start", src: "From the Start.mp3", img: "from-the-start.png" },
     { name: "The Bird Song", src: "The Bird Song.mp3", img: "the-bird-song.png" },
@@ -14,31 +17,38 @@ const songs = [
     { name: "I WANNA BE", src: "I WANNA BE.mp3", img: "i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
     { name: "spectacular", src: "spectacular.mp3", img: "spectacular.png" },
-    { name: "Beethoven's 5th Symphony", src: "Beethoven's 5th Symphony.mp3", img: "beethovens-5th-symphony.png" },
-    { name: "Für Elise", src: "Für Elise.mp3", img: "fur-elise.png" },
 ];
+
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
+
 function loadSong(index) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image
+    songNameDisplay.textContent = songs[index].name; // Update the song name display
     audioPlayer.play().catch(error => console.error('Playback error:', error));
 }
+
 function shuffleSong() {
     console.log('Shuffle button clicked');
-    isShuffleMode = true;
-    if (playedSongs.length === songs.length) {
-        playedSongs = []; // Reset the list if all songs have been played
+    isShuffleMode = !isShuffleMode; // Toggle shuffle mode
+    shuffleBtn.textContent = isShuffleMode ? 'Shuffle On' : 'Shuffle Off';
+    if (isShuffleMode) {
+        if (playedSongs.length === songs.length) {
+            playedSongs = []; // Reset the list if all songs have been played
+        }
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * songs.length);
+        } while (playedSongs.includes(randomIndex));
+        playedSongs.push(randomIndex);
+        currentSongIndex = randomIndex;
+        loadSong(currentSongIndex);
+    } else {
+        playedSongs = []; // Reset played songs when shuffle mode is off
     }
-    let randomIndex;
-    do {
-        randomIndex = Math.floor(Math.random() * songs.length);
-    } while (playedSongs.includes(randomIndex));
-    playedSongs.push(randomIndex);
-    currentSongIndex = randomIndex;
-    loadSong(currentSongIndex);
 }
 
 function nextSong() {
@@ -48,6 +58,26 @@ function nextSong() {
     } else {
         currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
         loadSong(currentSongIndex);
+    }
+}
+
+function prevSong() {
+    console.log('Previous button clicked');
+    if (isShuffleMode) {
+        shuffleSong();
+    } else {
+        currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
+        loadSong(currentSongIndex);
+    }
+}
+
+function togglePlayPause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = 'Pause';
+    } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = 'Play';
     }
 }
 
@@ -63,11 +93,15 @@ function stopSpinning() {
 
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
+prevBtn.addEventListener('click', prevSong);
+playPauseBtn.addEventListener('click', togglePlayPause);
+
 audioPlayer.addEventListener('play', startSpinning);
 audioPlayer.addEventListener('pause', stopSpinning);
 audioPlayer.addEventListener('ended', function() {
     stopSpinning();
     nextSong(); // Automatically play the next song when the current one ends
 });
+
 // Load the first song on page load
 loadSong(currentSongIndex);
