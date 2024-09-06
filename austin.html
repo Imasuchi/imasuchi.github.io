@@ -111,14 +111,14 @@
     
     <script>
         window.onload = function() {
-            const loggedInUser = localStorage.getItem('loggedInUser');
-            if (!loggedInUser || loggedInUser !== 'user1') {  // Adjust for each user's page
+            const loggedInUser = sessionStorage.getItem('loggedInUser');
+            if (!loggedInUser || loggedInUser !== 'Austin') {  // Adjust for each user's page
                 window.location.href = 'index.html';  // Redirect if not authenticated
             }
         };
 
         function logout() {
-            localStorage.removeItem('loggedInUser');
+            sessionStorage.removeItem('loggedInUser');
             window.location.href = 'index.html';  // Redirect after logout
         }
     </script>
