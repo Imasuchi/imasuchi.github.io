@@ -4,14 +4,14 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
-    { name: "Tennessee Whiskey (Official Audio)", src: "Songs/Chris Stapleton - Tennessee Whiskey (Official Audio).mp3", img: "Tennessee-whiskey.png" },
-    { name: "Craig Morgan - Almost Home (2020 – Remaster) [Official Audio]", src: "Songs/Craig Morgan - Almost Home (2020 – Remaster) [Official Audio].mp3", img: "Almost-home.png" },
-    { name: "Blackstreet - No Diggity (Official Music Video) ft. Dr. Dre, Queen Pen", src: "Songs/Blackstreet - No Diggity (Official Music Video) ft. Dr. Dre, Queen Pen.mp3", img: "No-diggity.png" },
-    { name: "Eminem - Houdini (Lyrics)", src: "Songs/Eminem - Houdini (Lyrics).mp3", img: "Houdini.png" },
-    { name: "Hooked On A Feeling", src: "Songs/Hooked On A Feeling.mp3", img: "Hooked-on-a-feeling.png" },
-    { name: "Looking Glass - Brandy (You're a Fine Girl) (Official Audio)", src: "Songs/Looking Glass - Brandy (You're a Fine Girl) (Official Audio).mp3", img: "Brandy.png" },  
-    { name: "Paint Me A Birmingham", src: "Songs/Songs/Paint Me A Birmingham.mp3", img: "Paint-me-a-brimingham.png" },
-    { name: "Spirit In The Sky - Norman Greenbaum (Official Lyric Video)", src: "Songs/Spirit In The Sky - Norman Greenbaum (Official Lyric Video).mp3", img: "Spirit-in-the-sky.png" }
+    { name: "Tennessee Whiskey (Official Audio)", src: "songs/Chris Stapleton - Tennessee Whiskey (Official Audio).mp3", img: "Tennessee-whiskey.png" },
+    { name: "Craig Morgan - Almost Home (2020 – Remaster) [Official Audio]", src: "songs/Craig Morgan - Almost Home (2020 – Remaster) [Official Audio].mp3", img: "Almost-home.png" },
+    { name: "Blackstreet - No Diggity (Official Music Video) ft. Dr. Dre, Queen Pen", src: "songs/Blackstreet - No Diggity (Official Music Video) ft. Dr. Dre, Queen Pen.mp3", img: "No-diggity.png" },
+    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).mp3", img: "Houdini.png" },
+    { name: "Hooked On A Feeling", src: "songs/Hooked On A Feeling.mp3", img: "Hooked-on-a-feeling.png" },
+    { name: "Looking Glass - Brandy (You're a Fine Girl) (Official Audio)", src: "songs/Looking Glass - Brandy (You're a Fine Girl) (Official Audio).mp3", img: "Brandy.png" },  
+    { name: "Paint Me A Birmingham", src: "songs/Songs/Paint Me A Birmingham.mp3", img: "Paint-me-a-brimingham.png" },
+    { name: "Spirit In The Sky - Norman Greenbaum (Official Lyric Video)", src: "songs/Spirit In The Sky - Norman Greenbaum (Official Lyric Video).mp3", img: "Spirit-in-the-sky.png" }
 
 ];
 let currentSongIndex = 0;
