@@ -14,18 +14,27 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-.spin-image {
-    width: 317px; /* Adjust the size as needed */
-    height: auto;
-    /* Default state without animation */
+#spin-image {
+    transition: transform 0.3s ease-in-out;
 }
-.spin-image.spinning {
+
+#spin-image.spinning {
     animation: spin 4s linear infinite;
 }
 
-.spin-image.paused {
+#spin-image.paused {
     animation-play-state: paused;
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 
 
 h1 {
