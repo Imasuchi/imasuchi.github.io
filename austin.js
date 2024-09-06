@@ -14,17 +14,20 @@ const songs = [
     { name: "I WANNA BE", src: "songs/I WANNA BE.mp3", img: "i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
     { name: "spectacular", src: "songs/spectacular.mp3", img: "spectacular.png" }
-
 ];
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-function loadSong(index) {
+
+function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image
-    audioPlayer.play().catch(error => console.error('Playback error:', error));
+    if (autoPlay) {
+        audioPlayer.play().catch(error => console.error('Playback error:', error));
+    }
 }
+
 function shuffleSong() {
     console.log('Shuffle button clicked');
     isShuffleMode = true;
@@ -37,7 +40,7 @@ function shuffleSong() {
     } while (playedSongs.includes(randomIndex));
     playedSongs.push(randomIndex);
     currentSongIndex = randomIndex;
-    loadSong(currentSongIndex);
+    loadSong(currentSongIndex, true); // Load and play the shuffled song
 }
 
 function nextSong() {
@@ -46,7 +49,7 @@ function nextSong() {
         shuffleSong();
     } else {
         currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
-        loadSong(currentSongIndex);
+        loadSong(currentSongIndex, true); // Load and play the next song
     }
 }
 
@@ -68,5 +71,6 @@ audioPlayer.addEventListener('ended', function() {
     stopSpinning();
     nextSong(); // Automatically play the next song when the current one ends
 });
-// Load the first song on page load
-loadSong(currentSongIndex, false);
+
+// Load the first song on page load without autoplay
+loadSong(currentSongIndex, false); // Set false to prevent autoplay on page load
