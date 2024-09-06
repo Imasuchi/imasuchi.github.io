@@ -7,23 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-            body::before {
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 5000px;
+            height: 5000px;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to dim the background */
+            z-index: 0.1;
+            pointer-events: none;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 5000px;
-        height: 5000px;
-        background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to dim the background */
-        z-index: 0.1;
-        pointer-events: none;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-    
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -108,8 +106,25 @@
     <div class="controls">
         <button id="shuffle-btn">Shuffle</button>
         <button id="next-btn">Next</button>
+        <button onclick="logout()">Logout</button> <!-- Logout button -->
     </div>
     
+    <script>
+        // Check if the user is logged in
+        window.onload = function() {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            if (!loggedInUser || loggedInUser !== 'user1') { // Adjust username check as needed
+                window.location.href = 'index.html'; // Redirect to login page if not authenticated
+            }
+        };
+
+        // Function to log out the user
+        function logout() {
+            localStorage.removeItem('loggedInUser');  // Remove session
+            window.location.href = 'index.html';  // Redirect to login page
+        }
+    </script>
+
     <script src="austin.js"></script>
 </body>
 </html>
