@@ -69,7 +69,7 @@
 
             if (users[username] && users[username].password === password) {
                 // Store the username in localStorage to signify the user is logged in
-                localStorage.setItem('loggedInUser', username);
+                sessionStorage.setItem('loggedInUser', username);
                 // Redirect to the user's personalized page
                 window.location.href = users[username].page;
                 return false;
