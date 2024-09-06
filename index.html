@@ -44,10 +44,10 @@
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm" onsubmit="return validateLogin()">
-            <label for="austim">Username:</label>
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
-            <label for="Tigers091">Password:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
             <button type="submit">Login</button>
@@ -55,10 +55,9 @@
     </div>
 
     <script>
-        // Example user data (this should be stored securely on the server side in production)
         const users = {
-            "austin": { password: "tigers091", page: "austin.html" },
-            "user2": { password: "password2", page: "user2.html" },
+            "austin": { password: "Tigers091", page: "austin.html" },
+            "josh": { password: "password2", page: "user2.html" },
             // Add more users here
         };
 
@@ -66,14 +65,15 @@
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Check if the username exists and the password matches
             if (users[username] && users[username].password === password) {
+                // Store the username in localStorage to signify the user is logged in
+                localStorage.setItem('loggedInUser', username);
                 // Redirect to the user's personalized page
                 window.location.href = users[username].page;
-                return false;  // Prevent form submission (since we're redirecting)
+                return false;
             } else {
                 alert("Invalid username or password");
-                return false;  // Prevent form submission
+                return false;
             }
         }
     </script>
