@@ -69,4 +69,4 @@ audioPlayer.addEventListener('ended', function() {
     nextSong(); // Automatically play the next song when the current one ends
 });
 // Load the first song on page load
-loadSong(currentSongIndex);
+loadSong(currentSongIndex, false);
