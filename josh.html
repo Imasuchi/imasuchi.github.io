@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh's Playlist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 5000px;
+            height: 5000px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 0.1;
+            pointer-events: none;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-image: url('the-background4.gif'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 43.2%;
+            left: 51.5%;
+            transform: translate(-50%, -50%);
+            width: 429px;
+            height: 324px;
+            background-image: url('record-player.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+        
+        .spin-image {
+            width: 350px;
+            height: auto;
+            z-index: 3;
+            position: relative;
+        }
+
+        .spin-image.spinning {
+            animation: spin 4s linear infinite;
+        }
+
+        h1 {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            z-index: 4;
+        }
+
+        .controls {
+            position: relative;
+            z-index: 4;
+        }
+
+        .controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio-player" controls></audio>
+    <!-- Single image element -->
+    <img id="spin-image" class="spin-image" src="" alt="Spinning Image">
+    
+    <h1>Music Player</h1>
+    <div class="controls">
+        <button id="shuffle-btn">Shuffle</button>
+        <button id="next-btn">Next</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            const loggedInUser = sessionStorage.getItem('loggedInUser');
+            if (!loggedInUser || loggedInUser !== 'Austin') {  // Adjust for each user's page
+                window.location.href = 'index.html';  // Redirect if not authenticated
+            }
+        };
+
+        function logout() {
+            sessionStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';  // Redirect after logout
+        }
+    </script>
+
+    <script src="austin.js"></script>
+</body>
+</html>
