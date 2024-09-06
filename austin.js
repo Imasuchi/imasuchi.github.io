@@ -13,7 +13,7 @@ const songs = [
     { name: "Pointless relations", src: "songs/Pointless relations.mp3", img: "Pointless-Relations.png" },
     { name: "I WANNA BE", src: "songs/I WANNA BE.mp3", img: "i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
-    { name: "spectacular", src: "songs/spectacular.mp3", img: "spectacular.png" },
+    { name: "spectacular", src: "songs/spectacular.mp3", img: "spectacular.png" }
 
 ];
 let currentSongIndex = 0;
