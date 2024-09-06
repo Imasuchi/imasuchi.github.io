@@ -14,7 +14,7 @@
             left: 0;
             width: 5000px;
             height: 5000px;
-            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to dim the background */
+            background-color: rgba(0, 0, 0, 0.5); 
             z-index: 0.1;
             pointer-events: none;
             background-size: cover;
@@ -34,7 +34,7 @@
             height: 100vh;
             margin: 0;
             flex-direction: column;
-            background-image: url('the-background4.gif'); /* Replace with your background image */
+            background-image: url('the-background4.gif'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -47,9 +47,9 @@
             top: 43.2%;
             left: 51.5%;
             transform: translate(-50%, -50%);
-            width: 429px; /* Adjust the size as needed */
-            height: 324px; /* Adjust the size as needed */
-            background-image: url('record-player.png'); /* Replace with your image */
+            width: 429px;
+            height: 324px;
+            background-image: url('record-player.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -57,10 +57,10 @@
         }
         
         .spin-image {
-            width: 350px; /* Adjust the size as needed */
+            width: 350px;
             height: auto;
-            z-index: 3; /* Ensure this is above the background image */
-            position: relative; /* To ensure it follows the stacking order */
+            z-index: 3;
+            position: relative;
         }
 
         .spin-image.spinning {
@@ -68,16 +68,16 @@
         }
 
         h1 {
-            background-color: rgba(0, 0, 0, 0.7); /* Black background with some transparency */
-            color: white; /* White text color for contrast */
-            padding: 10px; /* Add some padding around the text */
-            border-radius: 5px; /* Rounded corners for a smoother look */
-            position: relative; /* To ensure it is above the pseudo-element */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
             z-index: 4;
         }
 
         .controls {
-            position: relative; /* To ensure it is above the pseudo-element */
+            position: relative;
             z-index: 4;
         }
 
@@ -106,22 +106,20 @@
     <div class="controls">
         <button id="shuffle-btn">Shuffle</button>
         <button id="next-btn">Next</button>
-        <button onclick="logout()">Logout</button> <!-- Logout button -->
+        <button onclick="logout()">Logout</button>
     </div>
     
     <script>
-        // Check if the user is logged in
         window.onload = function() {
             const loggedInUser = localStorage.getItem('loggedInUser');
-            if (!loggedInUser || loggedInUser !== 'user1') { // Adjust username check as needed
-                window.location.href = 'index.html'; // Redirect to login page if not authenticated
+            if (!loggedInUser || loggedInUser !== 'user1') {  // Adjust for each user's page
+                window.location.href = 'index.html';  // Redirect if not authenticated
             }
         };
 
-        // Function to log out the user
         function logout() {
-            localStorage.removeItem('loggedInUser');  // Remove session
-            window.location.href = 'index.html';  // Redirect to login page
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';  // Redirect after logout
         }
     </script>
 
