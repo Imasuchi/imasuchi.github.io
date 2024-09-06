@@ -12,8 +12,6 @@ const songs = [
     { name: "Looking Glass - Brandy (You're a Fine Girl) (Official Audio)", src: "Looking Glass - Brandy (You're a Fine Girl) (Official Audio).mp3", img: "Brandy.png" },  
     { name: "Paint Me A Birmingham", src: "Paint Me A Birmingham.mp3", img: "Paint-me-a-brimingham.png" },
     { name: "Spirit In The Sky - Norman Greenbaum (Official Lyric Video)", src: "Spirit In The Sky - Norman Greenbaum (Official Lyric Video).mp3", img: "Spirit-in-the-sky.png" }
-    { name: "", src: ".mp3", img: ".png" }
-    { name: “", src: ".mp3", img: ".png" }
 
 ];
 let currentSongIndex = 0;
