@@ -4,16 +4,16 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
-    { name: "From the Start", src: "Songs/From the Start.mp3", img: "from-the-start.png" },
-    { name: "The Bird Song", src: "Songs/The Bird Song.mp3", img: "the-bird-song.png" },
-    { name: "Seventh Heaven", src: "Songs/Seventh Heaven.mp3", img: "seventh-heaven.png" },
-    { name: "Not Like Us", src: "Songs/Not Like Us.mp3", img: "not-like-us.png" },
-    { name: "Mimis Delivery Service", src: "Songs/Mimis Delivery Service.mp3", img: "mimis-delivery-service.png" },
-    { name: "Vacancy!", src: "Songs/Vacancy!.mp3", img: "vacancy.png" },  
-    { name: "Pointless relations", src: "Songs/Pointless relations.mp3", img: "Pointless-Relations.png" },
-    { name: "I WANNA BE", src: "Songs/I WANNA BE.mp3", img: "i-wanna-be.png" },  
-    { name: "Come tell me the real way! (feat. Taiketsu)", src: "Songs/Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
-    { name: "spectacular", src: "Songs/spectacular.mp3", img: "spectacular.png" },
+    { name: "From the Start", src: "songs/From the Start.mp3", img: "from-the-start.png" },
+    { name: "The Bird Song", src: "songs/The Bird Song.mp3", img: "the-bird-song.png" },
+    { name: "Seventh Heaven", src: "songs/Seventh Heaven.mp3", img: "seventh-heaven.png" },
+    { name: "Not Like Us", src: "songs/Not Like Us.mp3", img: "not-like-us.png" },
+    { name: "Mimis Delivery Service", src: "songs/Mimis Delivery Service.mp3", img: "mimis-delivery-service.png" },
+    { name: "Vacancy!", src: "songs/Vacancy!.mp3", img: "vacancy.png" },  
+    { name: "Pointless relations", src: "songs/Pointless relations.mp3", img: "Pointless-Relations.png" },
+    { name: "I WANNA BE", src: "songs/I WANNA BE.mp3", img: "i-wanna-be.png" },  
+    { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).mp3", img: "Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
+    { name: "spectacular", src: "songs/spectacular.mp3", img: "spectacular.png" },
 
 ];
 let currentSongIndex = 0;
