@@ -4,7 +4,7 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
-    { name: "Tennessee Whiskey (Official Audio)", src: "Tennessee Whiskey (Official Audio).mp3", img: "Tennessee-whiskey.png" },
+    { name: "Tennessee Whiskey (Official Audio)", src: "Chris Stapleton - Tennessee Whiskey (Official Audio).mp3", img: "Tennessee-whiskey.png" },
     { name: "Craig Morgan - Almost Home (2020 – Remaster) [Official Audio]", src: "Craig Morgan - Almost Home (2020 – Remaster) [Official Audio].mp3", img: "Almost-home.png" },
     { name: "Blackstreet - No Diggity (Official Music Video) ft. Dr. Dre, Queen Pen", src: "Blackstreet - No Diggity (Official Music Video) ft. Dr. Dre, Queen Pen.mp3", img: "No-diggity.png" },
     { name: "Eminem - Houdini (Lyrics)", src: "Eminem - Houdini (Lyrics).mp3", img: "Houdini.png" },
