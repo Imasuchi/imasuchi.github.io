@@ -17,7 +17,7 @@ const songs = [
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-function loadSong(index) {
+function loadSong(index, autoplay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image
@@ -35,7 +35,7 @@ function shuffleSong() {
     } while (playedSongs.includes(randomIndex));
     playedSongs.push(randomIndex);
     currentSongIndex = randomIndex;
-    loadSong(currentSongIndex);
+    loadSong(currentSongIndex, true);
 }
 
 function nextSong() {
@@ -44,7 +44,7 @@ function nextSong() {
         shuffleSong();
     } else {
         currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
-        loadSong(currentSongIndex);
+        loadSong(currentSongIndex, true);
     }
 }
 
