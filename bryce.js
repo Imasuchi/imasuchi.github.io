@@ -22,7 +22,7 @@ const songs = [
     { name: "Natalie Taylor - Surrender (Lyrics)", src: "songs/Natalie Taylor - Surrender (Lyrics).mp3", img: "records/surrender.png" },
     { name: "No Sleep Till Brooklyn", src: "songs/No Sleep Till Brooklyn.mp3", img: "records/nosleep.png" },
     { name: "Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video)", src: "songs/Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video).mp3", img: "records/dogdays.png" },
-    { name: "Reba McEntire - Fancy (Official Music Video)", src: "songs/Reba McEntire - Fancy (Official Music Video).mp3", img: "records/.png" },
+    { name: "Reba McEntire - Fancy (Official Music Video)", src: "songs/Reba McEntire - Fancy (Official Music Video).mp3", img: "records/fancy.png" },
     { name: "Don't Take It Away- Conway Twitty", src: "songs/Don't Take It Away- Conway Twitty.mp3", img: "records/donttakeit.png" },
     { name: "Conway Twitty's _That's My Job_", src: "songs/Conway Twitty's _That's My Job_.mp3", img: "records/myjob.png" }
 
