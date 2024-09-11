@@ -12,19 +12,19 @@ const songs = [
     { name: "Looking Glass - Brandy (You're a Fine Girl) (Official Audio)", src: "songs/Looking Glass - Brandy (You're a Fine Girl) (Official Audio).mp3", img: "records/Brandy.png" },  
     { name: "Paint Me A Birmingham", src: "songs/Paint Me A Birmingham.mp3", img: "records/Paint-me-a-brimingham.png" },
     { name: "Spirit In The Sky - Norman Greenbaum (Official Lyric Video)", src: "songs/Spirit In The Sky - Norman Greenbaum (Official Lyric Video).mp3", img: "records/Spirit-in-the-sky.png" },
-    { name: "Old Time Rock & Roll", src: "songs/Old Time Rock & Roll.mp3", img: "records/.png" },
-    { name: "Moonage Daydream (2012 Remaster)", src: "songs/Moonage Daydream (2012 Remaster).mp3", img: "records/.png" },
-    { name: "songs/The Ballad Of Buster Scruggs Soundtrack - _When A Cowboy Trades His Spurs For Wings_", src: "songs/songs/The Ballad Of Buster Scruggs Soundtrack - _When A Cowboy Trades His Spurs For Wings_.mp3", img: "records/.png" },
-    { name: "Jelly Roll - Save Me (with Lainey Wilson) [Official Audio]", src: "songs/Jelly Roll - Save Me (with Lainey Wilson) [Official Audio].mp3", img: "records/.png" },
-    { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.mp3", img: "records/.png" },
-    { name: "Fleetwood Mac - The Chain (Official Audio)", src: "songsFleetwood Mac - The Chain (Official Audio).mp3/", img: "records/.png" },
-    { name: "Father And Son", src: "songs/Father And Son.mp3", img: "records/.png" },
-    { name: "Natalie Taylor - Surrender (Lyrics)", src: "songs/Natalie Taylor - Surrender (Lyrics).mp3", img: "records/.png" },
-    { name: "No Sleep Till Brooklyn", src: "songs/No Sleep Till Brooklyn.mp3", img: "records/.png" },
-    { name: "Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video)", src: "songs/Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video).mp3", img: "records/.png" },
+    { name: "Old Time Rock & Roll", src: "songs/Old Time Rock & Roll.mp3", img: "records/oldtime.png" },
+    { name: "Moonage Daydream (2012 Remaster)", src: "songs/Moonage Daydream (2012 Remaster).mp3", img: "records/moonage.png" },
+    { name: "The Ballad Of Buster Scruggs Soundtrack - _When A Cowboy Trades His Spurs For Wings_", src: "songs/The Ballad Of Buster Scruggs Soundtrack - _When A Cowboy Trades His Spurs For Wings_.mp3", img: "records/whenacowboytradeshisspurs.png" },
+    { name: "Jelly Roll - Save Me (with Lainey Wilson) [Official Audio]", src: "songs/Jelly Roll - Save Me (with Lainey Wilson) [Official Audio].mp3", img: "records/saveme.png" },
+    { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.mp3", img: "records/mrbluesky.png" },
+    { name: "Fleetwood Mac - The Chain (Official Audio)", src: "songs/Fleetwood Mac - The Chain (Official Audio).mp3/", img: "records/thechain.png" },
+    { name: "Father And Son", src: "songs/Father And Son.mp3", img: "records/fatherandson.png" },
+    { name: "Natalie Taylor - Surrender (Lyrics)", src: "songs/Natalie Taylor - Surrender (Lyrics).mp3", img: "records/surrender.png" },
+    { name: "No Sleep Till Brooklyn", src: "songs/No Sleep Till Brooklyn.mp3", img: "records/nosleep.png" },
+    { name: "Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video)", src: "songs/Florence + The Machine - Dog Days Are Over (2010 Version) (Official Music Video).mp3", img: "records/dogdays.png" },
     { name: "Reba McEntire - Fancy (Official Music Video)", src: "songs/Reba McEntire - Fancy (Official Music Video).mp3", img: "records/.png" },
-    { name: "Don't Take It Away- Conway Twitty", src: "songs/Don't Take It Away- Conway Twitty.mp3", img: "records/.png" },
-    { name: "Conway Twitty's _That's My Job_.mp3", src: "songs/Conway Twitty's _That's My Job_", img: "records/.png" }
+    { name: "Don't Take It Away- Conway Twitty", src: "songs/Don't Take It Away- Conway Twitty.mp3", img: "records/donttakeit.png" },
+    { name: "Conway Twitty's _That's My Job_.mp3", src: "songs/Conway Twitty's _That's My Job_", img: "records/myjob.png" }
 
 ];
 let currentSongIndex = 0;
