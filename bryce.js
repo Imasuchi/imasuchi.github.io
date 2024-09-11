@@ -10,7 +10,7 @@ const songs = [
     { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).mp3", img: "records/Houdini.png" },
     { name: "Hooked On A Feeling", src: "songs/Hooked On A Feeling.mp3", img: "records/Hooked-on-a-feeling.png" },
     { name: "Looking Glass - Brandy (You're a Fine Girl) (Official Audio)", src: "songs/Looking Glass - Brandy (You're a Fine Girl) (Official Audio).mp3", img: "records/Brandy.png" },  
-    { name: "Paint Me A Birmingham", src: "songs/Songs/Paint Me A Birmingham.mp3", img: "records/Paint-me-a-brimingham.png" },
+    { name: "Paint Me A Birmingham", src: "songs/Paint Me A Birmingham.mp3", img: "records/Paint-me-a-brimingham.png" },
     { name: "Spirit In The Sky - Norman Greenbaum (Official Lyric Video)", src: "songs/Spirit In The Sky - Norman Greenbaum (Official Lyric Video).mp3", img: "records/Spirit-in-the-sky.png" },
     { name: "Old Time Rock & Roll", src: "songs/Old Time Rock & Roll.mp3", img: "records/.png" },
     { name: "Moonage Daydream (2012 Remaster)", src: "songs/Moonage Daydream (2012 Remaster).mp3", img: "records/.png" },
