@@ -13,7 +13,9 @@ const songs = [
     { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "records/Pointless-Relations.png" },
     { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
+    { name: "Cupid's Chokehold - Breakfast in America", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/cupids-chokehold.png" },
     { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" }
+
 ];
 let currentSongIndex = 0;
 let playedSongs = [];
