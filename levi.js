@@ -4,7 +4,7 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
-    { name: "", src: "songs/Cupid's Chokehold - Breakfast in America.mp3", img: "records/cupids-chokehold.png" },
+    { name: "", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/cupids-chokehold.png" },
     { name: "", src: "songs/Blueberry Faygo.mp3", img: "records/blueberry-fago.png" },
     { name: "", src: "songs/I Need You.mp3", img: "records/christian-gates1.png" },
     { name: "", src: "songs/careless 2.0.mp3", img: "records/careless2.0.png" },
