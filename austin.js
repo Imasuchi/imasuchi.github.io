@@ -14,6 +14,7 @@ const songs = [
     { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
     { name: "Cupid's Chokehold - Breakfast in America", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/cupids-chokehold.png" },
+    { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.ogg", img: "records/mrbluesky.png" },
     { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" }
 
 ];
