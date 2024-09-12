@@ -8,7 +8,7 @@ const songs = [
     { name: "Seventh Heaven", src: "songs/Seventh Heaven.ogg", img: "records/seventh-heaven.png" },
     { name: "Mimis Delivery Service", src: "songs/Mimis Delivery Service.ogg", img: "records/mimis-delivery-service.png" },
     { name: "Vacancy!", src: "songs/Vacancy!.ogg", img: "records/vacancy.png" },  
-    { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "Pointless-Relations.png" },
+    { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "records/Pointless-Relations.png" },
     { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/i-wanna-be.png" },  
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
     { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" },
