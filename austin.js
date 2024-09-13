@@ -15,8 +15,8 @@ const songs = [
     { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
     { name: "Cupid's Chokehold - Breakfast in America", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/cupids-chokehold.png" },
     { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.ogg", img: "records/mrbluesky.png" },
-    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Houdini.png" },
-    { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" }
+    { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" },
+    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Houdini.png" }
 
 ];
 let currentSongIndex = 0;
