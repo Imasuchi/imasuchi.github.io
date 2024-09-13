@@ -4,6 +4,7 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
+    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Houdini.png" },
     { name: "From the Start", src: "songs/From the Start.ogg", img: "records/from-the-start.png" },
     { name: "The Bird Song", src: "songs/The Bird Song.ogg", img: "records/the-bird-song.png" },
     { name: "Seventh Heaven", src: "songs/Seventh Heaven.ogg", img: "records/seventh-heaven.png" },
