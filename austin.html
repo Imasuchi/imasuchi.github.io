@@ -122,42 +122,6 @@
             window.location.href = 'index.html';  // Redirect after logout
         }
 
-    <title>Currently Playing Song</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-        .song-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-    </style>
-</head>
-<body>
-    <h1>Now Playing</h1>
-    <div class="song-title" id="currentSong">No song is currently playing.</div>
-
-    <script>
-        // Simulating a song change
-        const songs = ["Song A - Artist 1", "Song B - Artist 2", "Song C - Artist 3"];
-        let currentIndex = 0;
-
-        function updateSong() {
-            const songElement = document.getElementById('currentSong');
-            songElement.textContent = songs[currentIndex];
-            currentIndex = (currentIndex + 1) % songs.length; // Loop through songs
-        }
-
-        // Update the song every 5 seconds for demonstration
-        setInterval(updateSong, 5000);
-    </script>
-</body>
-</html>
 
     </script>
     
