@@ -30,15 +30,6 @@ body {
     margin-bottom: 20px;
 }
 
-#now-playing h2 {
-    margin-top: 0;
-}
-
-#song-title, #artist-name {
-    color: white;
-    margin-bottom: 10px;
-}
-
 .spin-image.spinning {
     animation: spin 4s linear infinite;
 }
