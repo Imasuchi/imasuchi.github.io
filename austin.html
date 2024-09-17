@@ -76,6 +76,24 @@
             z-index: 4;
         }
 
+        #now-playing {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            z-index: 4;
+            margin-bottom: 20px;
+        }
+
+        #now-playing h2 {
+            margin-top: 0;
+        }
+
+        #song-title, #artist-name {
+            color: white;
+            margin-bottom: 10px;
+        }
+
         .controls {
             position: relative;
             z-index: 4;
@@ -103,6 +121,14 @@
     <img id="spin-image" class="spin-image" src="" alt="Spinning Image">
     
     <h1>Music Player</h1>
+    
+    <!-- Now Playing section -->
+    <div id="now-playing">
+        <h2>Now Playing:</h2>
+        <p id="song-title"></p>
+        <p id="artist-name"></p>
+    </div>
+    
     <div class="controls">
         <button id="shuffle-btn">Shuffle</button>
         <button id="next-btn">Next</button>
@@ -121,8 +147,6 @@
             sessionStorage.removeItem('loggedInUser');
             window.location.href = 'index.html';  // Redirect after logout
         }
-
-
     </script>
     
     <script src="austin.js"></script>
