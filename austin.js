@@ -19,6 +19,31 @@ const songs = [
     { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Houdini.png" }
 
 ];
+
+
+// Get the now playing elements
+const songTitleElement = document.getElementById('song-title');
+const artistNameElement = document.getElementById('artist-name');
+const audioPlayer = document.getElementById('audio-player');
+
+// Function to update the Now Playing section
+function updateNowPlaying(song) {
+    songTitleElement.textContent = song.title;
+    artistNameElement.textContent = song.artist;
+    audioPlayer.src = song.src;
+}
+
+// Initialize the Now Playing section with the first song
+updateNowPlaying(songs[0]);
+
+// Update the Now Playing section when the next button is clicked
+document.getElementById('next-btn').addEventListener('click', () => {
+    const currentSongIndex = songs.findIndex((song) => song.src === audioPlayer.src);
+    const nextSongIndex = (currentSongIndex + 1) % songs.length;
+    updateNowPlaying(songs[nextSongIndex]);
+});
+
+
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
