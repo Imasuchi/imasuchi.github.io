@@ -19,6 +19,26 @@ body {
     height: auto;
     /* Default state without animation */
 }
+
+/* Add styles for the Now Playing section */
+#now-playing {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 4;
+    margin-bottom: 20px;
+}
+
+#now-playing h2 {
+    margin-top: 0;
+}
+
+#song-title, #artist-name {
+    color: white;
+    margin-bottom: 10px;
+}
+
 .spin-image.spinning {
     animation: spin 4s linear infinite;
 }
