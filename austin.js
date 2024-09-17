@@ -19,35 +19,10 @@ const songs = [
     { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Houdini.png" }
 
 ];
-
-
-// Get the now playing elements
-const songTitleElement = document.getElementById('song-title');
-const artistNameElement = document.getElementById('artist-name');
-const audioPlayer = document.getElementById('audio-player');
-
-// Function to update the Now Playing section
-function updateNowPlaying(song) {
-    songTitleElement.textContent = song.title;
-    artistNameElement.textContent = song.artist;
-    audioPlayer.src = song.src;
-}
-
-// Initialize the Now Playing section with the first song
-updateNowPlaying(songs[0]);
-
-// Update the Now Playing section when the next button is clicked
-document.getElementById('next-btn').addEventListener('click', () => {
-    const currentSongIndex = songs.findIndex((song) => song.src === audioPlayer.src);
-    const nextSongIndex = (currentSongIndex + 1) % songs.length;
-    updateNowPlaying(songs[nextSongIndex]);
-});
-
-
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-
+  
 function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
@@ -56,7 +31,6 @@ function loadSong(index, autoPlay = false) {
         audioPlayer.play().catch(error => console.error('Playback error:', error));
     }
 }
-
 function shuffleSong() {
     console.log('Shuffle button clicked');
     isShuffleMode = true;
@@ -71,7 +45,6 @@ function shuffleSong() {
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex, true); // Load and play the shuffled song
 }
-
 function nextSong() {
     console.log('Next button clicked');
     if (isShuffleMode) {
@@ -81,17 +54,14 @@ function nextSong() {
         loadSong(currentSongIndex, true); // Load and play the next song
     }
 }
-
 function startSpinning() {
     spinImage.classList.add('spinning');
     spinImage.classList.remove('paused');
 }
-
 function stopSpinning() {
     spinImage.classList.remove('spinning');
     spinImage.classList.add('paused');
 }
-
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
 audioPlayer.addEventListener('play', startSpinning);
@@ -100,6 +70,5 @@ audioPlayer.addEventListener('ended', function() {
     stopSpinning();
     nextSong(); // Automatically play the next song when the current one ends
 });
-
 // Load the first song on page load without autoplay
 loadSong(currentSongIndex, false); // Set false to prevent autoplay on page load
