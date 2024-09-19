@@ -4,19 +4,19 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
-    { name: "From the Start", src: "songs/From the Start.ogg", img: "records/from-the-start.png" },
-    { name: "The Bird Song", src: "songs/The Bird Song.ogg", img: "records/the-bird-song.png" },
-    { name: "Seventh Heaven", src: "songs/Seventh Heaven.ogg", img: "records/seventh-heaven.png" },
-    { name: "Not Like Us", src: "songs/Not Like Us.ogg", img: "records/not-like-us.png" },
-    { name: "Mimis Delivery Service", src: "songs/Mimis Delivery Service.ogg", img: "records/mimis-delivery-service.png" },
-    { name: "Vacancy!", src: "songs/Vacancy!.ogg", img: "records/vacancy.png" },  
-    { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "records/Pointless-Relations.png" },
-    { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/i-wanna-be.png" },  
-    { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
-    { name: "Cupid's Chokehold - Breakfast in America", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/cupids-chokehold.png" },
-    { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.ogg", img: "records/mrbluesky.png" },
-    { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" },
-    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Houdini.png" }
+    { name: "From the Start", src: "songs/From the Start.ogg", img: "records/Austin.png" },
+    { name: "The Bird Song", src: "songs/The Bird Song.ogg", img: "records/Austin.png" },
+    { name: "Seventh Heaven", src: "songs/Seventh Heaven.ogg", img: "records/Austin.png" },
+    { name: "Not Like Us", src: "songs/Not Like Us.ogg", img: "records/Austin.png" },
+    { name: "Mimis Delivery Service", src: "songs/Mimis Delivery Service.ogg", img: "records/Austin.png" },
+    { name: "Vacancy!", src: "songs/Vacancy!.ogg", img: "records/Austin.png" },  
+    { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "records/Austin.png" },
+    { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/Austin.png" },  
+    { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Austin.png" },
+    { name: "Cupid's Chokehold - Breakfast in America", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/Austin.png" },
+    { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.ogg", img: "records/Austin.png" },
+    { name: "spectacular", src: "songs/spectacular.ogg", img: "records/Austin.png" },
+    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Austin.png" }
 
 ];
 let currentSongIndex = 0;
