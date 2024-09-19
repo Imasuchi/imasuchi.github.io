@@ -16,7 +16,19 @@ const songs = [
     { name: "Cupid's Chokehold - Breakfast in America", src: "songs/Cupid's Chokehold - Breakfast in America.ogg", img: "records/Austin.png" },
     { name: "Mr. Blue Sky", src: "songs/Mr. Blue Sky.ogg", img: "records/Austin.png" },
     { name: "spectacular", src: "songs/spectacular.ogg", img: "records/Austin.png" },
-    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Austin.png" }
+    { name: "Eminem - Houdini (Lyrics)", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Austin.png" },
+    { name: "505", src "songs/505.ogg", img: "records/Austin.png" },
+    { name: "Be Wherever You are", src "songs/Be Wherever You Are(feat.Zach Callison).ogg", img: "records/Austin.png" },
+    { name: "Boy For The Weekend", src "songs/Boy For The Weekend.ogg", img: "records/Austin.png" },
+    { name: "Animals", src "songs/Animals.ogg", img: "records/Austin.png" },
+    { name: "As It Was", src "songs/As It Was.ogg", img: "records/Austin.png" },
+    { name: "Beautiful Things", src "songs/Beautiful Things.ogg", img: "records/Austin.png" },
+    { name: "Cycles", src "songs/Cycles.ogg", img: "records/Austin.png" },
+    { name: "Maried to the Bag", src "songs/Maried to the bag.ogg", img: "records/Austin.png" },
+    { name: "T.N.T.", src "songs/T.N.T..ogg", img: "records/Austin.png" },
+    { name: "Valentine", src "songs/Valentine.ogg", img: "records/Austin.png" },
+    { name: "Wrong Side of the Bed", src "songs/Wrong Side of the Bed.ogg", img: "records/Austin.png" },
+    { name: "Genocide", src "songs/Genocide.ogg", img: "records/Austin.png" },
 
 ];
 let currentSongIndex = 0;
