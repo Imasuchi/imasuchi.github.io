@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austins Playlist</title>
+    <title>Austin's Playlist</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body::before {
@@ -70,11 +70,26 @@
             z-index: 4;
         }
 
+        .now-playing {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute; /* Position it */
+            top: 50%; /* Vertically centered */
+            right: 20px; /* Position from the right */
+            transform: translateY(-50%); /* Adjust to be perfectly centered vertically */
+            text-align: center;
+            font-size: 18px;
+            display: none; /* Initially hidden */
+            z-index: 5; /* Make sure it appears on top */
+        }
+
         .controls {
             position: relative;
             z-index: 4;
-  
         }
+
         .controls button {
             margin: 5px;
             padding: 10px 20px;
@@ -85,6 +100,7 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         .controls button:hover {
             background-color: #0056b3;
         }
@@ -96,6 +112,12 @@
     <img id="spin-image" class="spin-image" src="" alt="Spinning Image">
 
     <h1>Music Player</h1>
+    
+    <!-- Now Playing Section -->
+    <div class="now-playing" id="now-playing">
+        Now Playing: <span id="track-title">Track Title</span> by <span id="track-artist">Artist</span>
+    </div>
+    
     <div class="controls">
         <button id="shuffle-btn">Shuffle</button>
         <button id="next-btn">Next</button>
@@ -103,21 +125,52 @@
     </div>
     
     <script>
+        // Check if the user is logged in
         window.onload = function() {
             const loggedInUser = sessionStorage.getItem('loggedInUser');
             if (!loggedInUser || loggedInUser !== 'Austin') {  // Adjust for each user's page
                 window.location.href = 'index.html';  // Redirect if not authenticated
             }
         };
+
         function logout() {
             sessionStorage.removeItem('loggedInUser');
             window.location.href = 'index.html';  // Redirect after logout
         }
 
+        const audioPlayer = document.getElementById('audio-player');
+        const spinImage = document.getElementById('spin-image');
+        const nowPlayingDiv = document.getElementById('now-playing');
+        const trackTitle = document.getElementById('track-title');
+        const trackArtist = document.getElementById('track-artist');
 
+        // Function to update the Now Playing section
+        function updateNowPlaying(track) {
+            trackTitle.textContent = track.title;
+            trackArtist.textContent = track.artist;
+            nowPlayingDiv.style.display = 'block';  // Show the Now Playing section
+        }
+
+        // Load the first track by default
+        let currentTrackIndex = 0;
+        audioPlayer.src = playlist[currentTrackIndex].src;
+        updateNowPlaying(playlist[currentTrackIndex]);
+
+        // Event listeners for buttons
+        document.getElementById('next-btn').addEventListener('click', function() {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            audioPlayer.src = playlist[currentTrackIndex].src;
+            audioPlayer.play();
+            updateNowPlaying(playlist[currentTrackIndex]);
+        });
+
+        document.getElementById('shuffle-btn').addEventListener('click', function() {
+            currentTrackIndex = Math.floor(Math.random() * playlist.length);
+            audioPlayer.src = playlist[currentTrackIndex].src;
+            audioPlayer.play();
+            updateNowPlaying(playlist[currentTrackIndex]);
+        });
     </script>
 
-    <script src="austin.js"></script>
-    
 </body>
 </html>
