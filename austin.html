@@ -99,7 +99,30 @@
             border-radius: 5px;
             z-index: 5;
 
-</style>
+               /* Added styles for song list section */
+        .song-list {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 5;
+            width: 200px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        
+        .song-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+        .song-item:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
     <audio id="audio-player" controls></audio>
@@ -108,8 +131,15 @@
 
 
     <h1>Music Player</h1>
+    
+    <!-- Song list section -->
+    <div class="song-list" id="song-list">
+        <!-- Song list will be populated here -->
+    </div>
+    
     <div class="controls">
         <button id="shuffle-btn">Shuffle</button>
+        <button id="prev-btn">Previous</button>
         <button id="next-btn">Next</button>
         <button onclick="logout()">Logout</button>
     </div>
