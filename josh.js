@@ -4,14 +4,14 @@ const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
 const songs = [
-    { name: "From the Start", src: "songs/From the Start.ogg", img: "records/from-the-start.png" },
-    { name: "Seventh Heaven", src: "songs/Seventh Heaven.ogg", img: "records/seventh-heaven.png" },
-    { name: "Mimis Delivery Service", src: "songs/Mimis Delivery Service.ogg", img: "records/mimis-delivery-service.png" },
-    { name: "Vacancy!", src: "songs/Vacancy!.ogg", img: "records/vacancy.png" },  
-    { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "records/Pointless-Relations.png" },
-    { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/i-wanna-be.png" },  
-    { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Come-tell-me-the-real-way!-(feat.-Taiketsu).png" },
-    { name: "spectacular", src: "songs/spectacular.ogg", img: "records/spectacular.png" },
+    { name: "From the Start", src: "songs/From the Start.ogg", img: "records/Josh.png" },
+    { name: "Seventh Heaven", src: "songs/Seventh Heaven.ogg", img: "records/Josh.png" },
+    { name: "Mimis Delivery Service", src: "songs/Mimis Delivery Service.ogg", img: "records/Josh.png" },
+    { name: "Vacancy!", src: "songs/Vacancy!.ogg", img: "records/Josh.png" },  
+    { name: "Pointless relations", src: "songs/Pointless relations.ogg", img: "records/Josh.png" },
+    { name: "I WANNA BE", src: "songs/I WANNA BE.ogg", img: "records/Josh.png" },  
+    { name: "Come tell me the real way! (feat. Taiketsu)", src: "songs/Come tell me the real way! (feat. Taiketsu).ogg", img: "records/Josh.png" },
+    { name: "spectacular", src: "songs/spectacular.ogg", img: "records/Josh.png" },
 
 ];
 let currentSongIndex = 0;
@@ -21,10 +21,15 @@ let isShuffleMode = false;
 function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
-    spinImage.src = songs[index].img; // Update the image
+    spinImage.src = songs[index].img; 
+    updateNowPlaying(); // Update the Now Playing section
     if (autoPlay) {
         audioPlayer.play().catch(error => console.error('Playback error:', error));
     }
+}
+
+function updateNowPlaying() {
+    document.getElementById("song-title").innerText = songs[currentSongIndex].name;
 }
 
 function shuffleSong() {
@@ -72,4 +77,5 @@ audioPlayer.addEventListener('ended', function() {
 });
 
 // Load the first song on page load without autoplay
-loadSong(currentSongIndex, false); // Set false to prevent autoplay on page load
+loadSong(currentSongIndex, false); 
+updateNowPlaying(); // Set false to prevent autoplay on page load
