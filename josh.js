@@ -42,7 +42,7 @@ const songs = [
     { name: "Buy U", src: "songs/Buy U.ogg", img: "records/Josh.png" },
     { name: "Cheat Codes for Hoes", src: "songs/Cheat Codes for Hoes (feat. TRAQULA).ogg", img: "records/Josh.png" },
     { name: "Come & Go", src: "songs/Come & Go.ogg", img: "records/Josh.png" },
-    { name: "Femboy Friday", src: "songs/Femboy Friday.ogg", img: "records/josh.png" },
+    { name: "Femboy Friday", src: "songs/Femboy Friday.ogg", img: "records/Josh.png" },
     { name: "Fuego", src: "songs/Fuego.ogg", img: "records/Josh.png" },
     { name: "Giveaway", src: "songs/Giveaway.ogg", img: "records/Josh.png" },
     { name: "Goosebumps", src: "songs/Goosebumps (Remix).ogg", img: "records/Josh.png" },
