@@ -2,7 +2,6 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-
 body {
     display: flex;
     justify-content: center;
@@ -15,11 +14,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 .spin-image {
     width: 317px; /* Adjust the size as needed */
     height: auto;
     /* Default state without animation */
+}
+
+/* Add styles for the Now Playing section */
+#now-playing {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 4;
+    margin-bottom: 20px;
 }
 
 .spin-image.spinning {
@@ -28,20 +36,4 @@ body {
 
 .spin-image.paused {
     animation-play-state: paused;
-}
-
-/* Updated Now Playing section */
-#now-playing {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute; /* Make it float */
-    top: 50%; /* Vertically centered */
-    right: 20px; /* Positioned on the right */
-    transform: translateY(-50%); /* Ensure perfect vertical centering */
-    z-index: 4; /* Make sure it's on top */
-    text-align: center;
-    font-size: 18px;
-    display: none; /* Initially hidden */
-    margin-bottom: 20px;
 }
