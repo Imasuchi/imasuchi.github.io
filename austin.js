@@ -34,7 +34,7 @@ const songs = [
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-  
+
 function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
@@ -90,3 +90,33 @@ audioPlayer.addEventListener('ended', function() {
 // Load the first song on page load without autoplay
 loadSong(currentSongIndex, false);
 updateNowPlaying();// Set false to prevent autoplay on page load
+
+
+// Additional code to populate song list and update nextSong function
+function populateSongList() {
+    const songList = document.getElementById('song-list');
+    songList.innerHTML = '';
+
+    songs.forEach((song, index) => {
+        const songItem = document.createElement('div');
+        songItem.classList.add('song-item');
+        songItem.innerText = song.name;
+        songItem.addEventListener('click', () => {
+            currentSongIndex = index;
+            loadSong(currentSongIndex, true);
+        });
+        songList.appendChild(songItem);
+    });
+}
+
+function nextSong() {
+    console.log('Next button clicked');
+    if (isShuffleMode) {
+        shuffleSong();
+    } else {
+        currentSongIndex = Math.floor(Math.random() * songs.length);
+        loadSong(currentSongIndex, true); // Load and play the next song
+    }
+}
+
+populateSongList();
