@@ -34,7 +34,7 @@ const songs = [
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
-  
+
 function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
@@ -48,6 +48,7 @@ function loadSong(index, autoPlay = false) {
 function updateNowPlaying() {
     document.getElementById("song-title").innerText = songs[currentSongIndex].name;
 }
+
 function shuffleSong() {
     console.log('Shuffle button clicked');
     isShuffleMode = true;
@@ -62,6 +63,7 @@ function shuffleSong() {
     currentSongIndex = randomIndex;
     loadSong(currentSongIndex, true); // Load and play the shuffled song
 }
+
 function nextSong() {
     console.log('Next button clicked');
     if (isShuffleMode) {
@@ -71,14 +73,17 @@ function nextSong() {
         loadSong(currentSongIndex, true); // Load and play the next song
     }
 }
+
 function startSpinning() {
     spinImage.classList.add('spinning');
     spinImage.classList.remove('paused');
 }
+
 function stopSpinning() {
     spinImage.classList.remove('spinning');
     spinImage.classList.add('paused');
 }
+
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
 audioPlayer.addEventListener('play', startSpinning);
@@ -87,6 +92,7 @@ audioPlayer.addEventListener('ended', function() {
     stopSpinning();
     nextSong(); // Automatically play the next song when the current one ends
 });
+
 // Load the first song on page load without autoplay
-loadSong(currentSongIndex, false);
-updateNowPlaying();// Set false to prevent autoplay on page load
+loadSong(currentSongIndex, false); 
+updateNowPlaying(); // Set false to prevent autoplay on page load
