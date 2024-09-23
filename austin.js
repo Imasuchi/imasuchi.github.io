@@ -22,13 +22,14 @@ const songs = [
 { name: "As It Was", src: "songs/As It Was.ogg", img: "records/Austin.png" }, 
 { name: "Beautiful Things", src: "songs/Beautiful Things.ogg", img: "records/Austin.png" }, 
 { name: "Cycles", src: "songs/Cycles.ogg", img: "records/Austin.png" }, 
-{ name: "Maried to the Bag", src: "songs/Maried to the Bag.ogg", img: "records/Austin.png" }, 
+{ name: "Maried to the Bag", src: "songs/Married to the Bag.ogg", img: "records/Austin.png" }, 
 { name: "T.N.T.", src: "songs/T.N.T..ogg", img: "records/Austin.png" }, 
 { name: "Valentine", src: "songs/Valentine.ogg", img: "records/Austin.png" }, 
 { name: "Wrong Side of the Bed", src: "songs/Wrong Side of the Bed.ogg", img: "records/Austin.png" }, 
 { name: "Genocide", src: "songs/Genocide.ogg", img: "records/Austin.png" },
 { name: "Holocaust", src: "songs/Holocaust (feat. WENDIGO & LiL CUBENSiS).ogg", img: "records/Austin.png" },
-{ name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Austin.png" }
+{ name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Austin.png" },
+{ name: "My name is", src: "songs/My name is.ogg", img: " records/Austin.png" }
 
 
 
