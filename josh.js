@@ -49,7 +49,8 @@ const songs = [
     { name: "Homicide", src: "songs/Homicide (feat. Eminem).ogg", img: "records/Josh.png" },
     { name: "Killshot", src: "songs/Killshot.ogg", img: "records/Josh.png" },
     { name: "Anime Thighs", src: "songs/Anime Thighs (feat. wonder).ogg", img: "records/Josh.png" },
-    { name: "Houdini", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Josh.png" }
+    { name: "Houdini", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Josh.png" },
+    { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Austin.png" }
     
     
 
