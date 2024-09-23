@@ -26,7 +26,9 @@ const songs = [
 { name: "T.N.T.", src: "songs/T.N.T..ogg", img: "records/Austin.png" }, 
 { name: "Valentine", src: "songs/Valentine.ogg", img: "records/Austin.png" }, 
 { name: "Wrong Side of the Bed", src: "songs/Wrong Side of the Bed.ogg", img: "records/Austin.png" }, 
-{ name: "Genocide", src: "songs/Genocide.ogg", img: "records/Austin.png" }
+{ name: "Genocide", src: "songs/Genocide.ogg", img: "records/Austin.png" },
+{ name: "Holocaust", src: "songs/Holocaust (feat. WENDIGO & LiL CUBENSiS).ogg", img: "records/Austin.png" },
+{ name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Austin.png" }
 
 
 
