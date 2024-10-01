@@ -35,7 +35,10 @@ const songs = [
 { name: "Brittle Bones Nicky 3", src: "songs/Brittle Bones Nicky 3.ogg", img: "records/Austin.png" },
 { name: "Rockstar", src: "songs/Rockstar.ogg", img: "records/Austin.png" },
 { name: "Smells Like Teen Spirit", src: "songs/Smells Like Teen Spirit.ogg", img: "records/Austin.png" },
-{ name: "I Can See Clearly", src: "songs/I Can See Clearly.ogg", img: "records/Austin.png" }
+{ name: "I Can See Clearly", src: "songs/I Can See Clearly.ogg", img: "records/Austin.png" },
+{ name: "Creep", src: "songs/Creep.ogg", img: "records/Austin.png" },
+{ name: "American Idiot", src: "songs/American Idiot.ogg", img: "records/Austin.png" },
+{ name: "Brain Stew", src: "songs/Brain Stew.ogg", img: "records/Austin.png" },
 
 
 
