@@ -50,7 +50,7 @@ const songs = [
     { name: "Killshot", src: "songs/Killshot.ogg", img: "records/Josh.png" },
     { name: "Anime Thighs", src: "songs/Anime Thighs (feat. wonder).ogg", img: "records/Josh.png" },
     { name: "Houdini", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Josh.png" },
-    { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Austin.png" }
+    { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Josh.png" }
     
     
 
