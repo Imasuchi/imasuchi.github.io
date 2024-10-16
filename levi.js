@@ -42,8 +42,8 @@ let isShuffleMode = false;
 function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
-    spinImage.src = songs[index].img; // Update the image
-        updateNowPlaying(); // Update the Now Playing section
+    spinImage.src = songs[index].img; 
+    updateNowPlaying(); // Update the Now Playing section
     if (autoPlay) {
         audioPlayer.play().catch(error => console.error('Playback error:', error));
     }
@@ -52,7 +52,6 @@ function loadSong(index, autoPlay = false) {
 function updateNowPlaying() {
     document.getElementById("song-title").innerText = songs[currentSongIndex].name;
 }
-
 
 function shuffleSong() {
     console.log('Shuffle button clicked');
@@ -99,4 +98,5 @@ audioPlayer.addEventListener('ended', function() {
 });
 
 // Load the first song on page load without autoplay
-loadSong(currentSongIndex, false); // Set false to prevent autoplay on page load
+loadSong(currentSongIndex, false); 
+updateNowPlaying(); // Set false to prevent autoplay on page load
