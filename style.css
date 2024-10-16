@@ -37,3 +37,7 @@ body {
 .spin-image.paused {
     animation-play-state: paused;
 }
+
+Label {
+    color:Black
+}
