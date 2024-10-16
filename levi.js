@@ -43,10 +43,16 @@ function loadSong(index, autoPlay = false) {
     console.log('Loading song:', songs[index].name);
     audioPlayer.src = songs[index].src;
     spinImage.src = songs[index].img; // Update the image
+        updateNowPlaying(); // Update the Now Playing section
     if (autoPlay) {
         audioPlayer.play().catch(error => console.error('Playback error:', error));
     }
 }
+
+function updateNowPlaying() {
+    document.getElementById("song-title").innerText = songs[currentSongIndex].name;
+}
+
 
 function shuffleSong() {
     console.log('Shuffle button clicked');
