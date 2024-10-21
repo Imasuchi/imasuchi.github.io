@@ -50,7 +50,8 @@ const songs = [
     { name: "Killshot", src: "songs/Killshot.ogg", img: "records/Josh.png" },
     { name: "Anime Thighs", src: "songs/Anime Thighs (feat. wonder).ogg", img: "records/Josh.png" },
     { name: "Houdini", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Josh.png" },
-    { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Josh.png" }
+    { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Josh.png" },
+    { name: "Your Favorite Song", src: "https://github.com/thesitedotcom/thesitedotcomfiles/raw/refs/heads/main/Blake/never-gonna-give-you-up.ogg", img: "records/Josh.png" }
     
     
 
