@@ -39,6 +39,7 @@ const songs = [
 { name: "Creep", src: "songs/Creep.ogg", img: "records/Austin.png" },
 { name: "American Idiot", src: "songs/American Idiot.ogg", img: "records/Austin.png" },
 { name: "Brain Stew", src: "songs/Brain Stew.ogg", img: "records/Austin.png" },
+{ name: "BEFORE THE MORNING", src: "songs/BEFORE THE MORNING.ogg", img: "records/Austin.png" }
 
 
 
