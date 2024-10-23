@@ -106,6 +106,7 @@ audioPlayer.addEventListener('ended', function() {
     nextSong(); // Automatically play the next song when the current one ends
 });
 
+
 // Load the first song on page load without autoplay
 loadSong(currentSongIndex, false); 
 updateNowPlaying(); // Set false to prevent autoplay on page load
