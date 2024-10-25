@@ -33,7 +33,7 @@ const songs = [
     { name: "", src: "songs/idfc.ogg", img: "records/Levi.png" },
     { name: "", src: "songs/Donald Trump.ogg", img: "records/Levi.png" },
     { name: "", src: "songs/Monsters (feat. Demi Lovato and blackbear).ogg", img: "records/Levi.png" },
-    { name: "", src: "songs/Take Me Back.ogg", img: "records/Levi.png" },
+    { name: "", src: "songs/Take Me Back.ogg", img: "records/Levi.png" }
 ];
 let currentSongIndex = 0;
 let playedSongs = [];
