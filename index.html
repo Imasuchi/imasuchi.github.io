@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login System</title>
+    <title>Login</title>
     <style>
       .login-container {
-            background-color: #FFFFFF
+            background-color: #FFFFFF;
             padding: 20px;
             border-radius: 9px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,16 +38,15 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: ##A9A9A9;
+            background-color: #A9A9A9;
         }
     
         label {
-    color:#FFFFFF
-}
-          h2 {
-    color:#FFFFFF
-}
-        
+            color: #FFFFFF;
+        }
+        h2 {
+            color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
@@ -67,24 +66,26 @@
     <script>
         // Example users database
         const users = {
-            "Austin": { password: "Tigers091", page: "austin.html" },
-            "Josh": { password: "TacoTuesday$", page: "josh.html" },
-            "Levi": { password: "password2", page: "levi.html" },
-            "Bryce": { password: "tigers125", page: "bryce.html" },
-            "Micah": { password: "Kysmonkeys", page: "Micah.html" },
-            "Spooky": { password: "Spooky Month", page: "spooky.html" }
+            "austin": { password: "Tigers091", page: "austin.html" },
+            "josh": { password: "TacoTuesday$", page: "josh.html" },
+            "levi": { password: "password2", page: "levi.html" },
+            "bryce": { password: "tigers125", page: "bryce.html" },
+            "micah": { password: "Kysmonkeys", page: "Micah.html" },
+            "spooky": { password: "Spooky Month", page: "spooky.html" }
             // Add more users here
         };
 
         function validateLogin() {
-            const username = document.getElementById("username").value;
+            const username = document.getElementById("username").value.toLowerCase();
             const password = document.getElementById("password").value;
 
-            if (users[username] && users[username].password === password) {
+            const matchingKey = Object.keys(users).find(key => key.toLowerCase() === username);
+
+            if (matchingKey && users[matchingKey].password === password) {
                 // Store the username in localStorage to signify the user is logged in
-                sessionStorage.setItem('loggedInUser', username);
+                sessionStorage.setItem('loggedInUser', matchingKey);
                 // Redirect to the user's personalized page
-                window.location.href = users[username].page;
+                window.location.href = users[matchingKey].page;
                 return false;
             } else {
                 alert("Type better dumbass");
