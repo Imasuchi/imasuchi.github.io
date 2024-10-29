@@ -39,8 +39,10 @@ const songs = [
 { name: "Creep", src: "songs/Creep.ogg", img: "records/Austin.gif" },
 { name: "American Idiot", src: "songs/American Idiot.ogg", img: "records/Austin.gif" },
 { name: "Brain Stew", src: "songs/Brain Stew.ogg", img: "records/Austin.gif" },
-{ name: "BEFORE THE MORNING", src: "songs/BEFORE THE MORNING.ogg", img: "records/Austin.gif" }
-
+{ name: "BEFORE THE MORNING", src: "songs/BEFORE THE MORNING.ogg", img: "records/Austin.gif" },
+{ name: "Clint Eastwood", src: "songs/Clint Eastwood.ogg", img: "records/Austin.gif" },
+{ name: "DARE (Radio Edit)", src: "songs/DARE (Radio Edit).ogg", img: "records/Austin.gif" },
+{ name: "Feel Good Inc.", src: "songs/Feel Good Inc..ogg", img: "records/Austin.gif" }
 
 
 ];
