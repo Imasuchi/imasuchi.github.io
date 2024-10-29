@@ -51,6 +51,10 @@ const songs = [
     { name: "Anime Thighs", src: "songs/Anime Thighs (feat. wonder).ogg", img: "records/Josh.gif" },
     { name: "Houdini", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Josh.gif" },
     { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Josh.gif" },
+    { name: "Clint Eastwood", src: "songs/Clint Eastwood.ogg", img: "records/Austin.gif" },
+    { name: "DARE (Radio Edit)", src: "songs/DARE (Radio Edit).ogg", img: "records/Austin.gif" },
+    { name: "Feel Good Inc.", src: "songs/Feel Good Inc..ogg", img: "records/Austin.gif" }
+
   
 
 ];
