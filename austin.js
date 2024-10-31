@@ -42,9 +42,14 @@ const songs = [
 { name: "BEFORE THE MORNING", src: "songs/BEFORE THE MORNING.ogg", img: "records/Austin.gif" },
 { name: "Clint Eastwood", src: "songs/Clint Eastwood.ogg", img: "records/Austin.gif" },
 { name: "DARE (Radio Edit)", src: "songs/DARE (Radio Edit).ogg", img: "records/Austin.gif" },
-{ name: "Feel Good Inc.", src: "songs/Feel Good Inc..ogg", img: "records/Austin.gif" }
-
-
+{ name: "Feel Good Inc.", src: "songs/Feel Good Inc..ogg", img: "records/Austin.gif" },
+{ name: "Copacabana (At the Copa)", src: "songs/Copacabana (At the Copa).ogg", img: "records/Austin.gif" },
+{ name: "Blind", src: "songs/Blind.ogg", img: "records/Austin.gif" },
+{ name: "Too Sweet", src: "songs/Too Sweet.ogg", img: "records/Austin.gif" },
+{ name: "Bye Bye Bye", src: "songs/Bye Bye Bye.ogg", img: "records/Austin.gif" },
+{ name: "Buddy Holly", src: "songs/Buddy Holly.ogg", img: "records/Austin.gif" },
+{ name: "GOSSIP", src: "songs/Gossip (feat. Tom Morello).ogg", img: "records/Austin.gif" },
+   
 ];
 let currentSongIndex = 0;
 let playedSongs = [];
