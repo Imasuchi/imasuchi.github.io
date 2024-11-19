@@ -48,7 +48,8 @@ const songs = [
 { name: "Too Sweet", src: "songs/Too Sweet.ogg", img: "records/Austin.gif" },
 { name: "Bye Bye Bye", src: "songs/Bye Bye Bye.ogg", img: "records/Austin.gif" },
 { name: "Buddy Holly", src: "songs/Buddy Holly.ogg", img: "records/Austin.gif" },
-{ name: "GOSSIP", src: "songs/GOSSIP (feat. Tom Morello).ogg", img: "records/Austin.gif" }
+{ name: "GOSSIP", src: "songs/GOSSIP (feat. Tom Morello).ogg", img: "records/Austin.gif" },
+{ name: "Tadow", src: "songs/Tadow.ogg", img: "records/Austin.gif" }
    
 ];
 let currentSongIndex = 0;
