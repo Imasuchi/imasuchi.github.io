@@ -10,7 +10,7 @@ const songs = [
     { name: "careless 2.0", src: "songs/careless 2.0.ogg", img: "records/Levi.png" },
     { name: "I Won't Beg for You", src: "songs/I Won't Beg for You.ogg", img: "records/Levi.png" },
     { name: "Falling Faster", src: "songs/Falling Faster.ogg", img: "records/Levi.png" },  
-    { name: "Why Do I Hear Breathing?", src: "songs/Why Do I Hear Breathing?_.ogg", img: "records/Levi.png" },
+    { name: "Why Do I Hear Breathing?", src: "songs/Why Do I Hear Breathing_.ogg", img: "records/Levi.png" },
     { name: "Pretty Distraction", src: "songs/Pretty Distraction.ogg", img: "records/Levi.png" },  
     { name: "mr. sunshine", src: "songs/mr. sunshine.ogg", img: "records/Levi.png" },
     { name: "BEHIND", src: "songs/BEHIND.ogg", img: "records/Levi.png" },
