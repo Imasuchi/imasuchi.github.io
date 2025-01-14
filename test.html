@@ -127,11 +127,6 @@
 </style>
 
     <script>
-        // Check if the user is authenticated
-        if (sessionStorage.getItem("authenticated") !== "true") {
-            // Redirect to the password entry page
-            window.location.href = "password.html";
-        }
 
         document.addEventListener("DOMContentLoaded", function() {
             var coll = document.getElementsByClassName("collapsible");
