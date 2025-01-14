@@ -123,6 +123,21 @@
     <div class="now-playing" id="now-playing">
         <span id="song-title"></span>
     </div>
+
+     <div class="playlist-container">
+        <h2>Austin</h2>
+        <button class="collapsible">Show Playlist</button>
+        <div class="content">
+            <ul class="playlist" id="playlist1">
+                <li><a href="javascript:void(0);" onclick="playAudio('audioPlayer1', 'songs/BEFORE THE MORNING.ogg')">Song 1</a></li>
+            </ul>
+        </div>
+        <button onclick="shufflePlaylist('playlist1', 'audioPlayer1')">Shuffle All</button>
+        <audio id="audioPlayer1" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     
     <script>
         window.onload = function() {
