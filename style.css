@@ -17,6 +17,7 @@ body {
 .spin-image {
     width: 317px; /* Adjust the size as needed */
     height: auto;
+    top: 20px;
     /* Default state without animation */
 }
 
