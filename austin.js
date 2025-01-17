@@ -51,7 +51,6 @@ const songs = [
 { name: "GOSSIP", src: "songs/GOSSIP (feat. Tom Morello).ogg", img: "records/Austin.gif" },
 { name: "Tadow", src: "songs/Tadow.ogg", img: "records/Austin.gif" },
 { name: "Come as You are", src: "songs/Come as you are (online-audio-converter.com).ogg", img: "records/Austin.gif" },
-{ name: "Faster car"", src: "songs/ Faster car.ogg", img: "records/Austin.gif" }
    
 ];
 let currentSongIndex = 0;
