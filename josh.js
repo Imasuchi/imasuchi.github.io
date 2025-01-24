@@ -1,4 +1,4 @@
-const audioPlayer = document.getElementById('audio-player');
+econst audioPlayer = document.getElementById('audio-player');
 const prevBtn = document.getElementById('prev-btn');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
@@ -51,9 +51,10 @@ const songs = [
     { name: "Anime Thighs", src: "songs/Anime Thighs (feat. wonder).ogg", img: "records/Josh.gif" },
     { name: "Houdini", src: "songs/Eminem - Houdini (Lyrics).ogg", img: "records/Josh.gif" },
     { name: "Banana Pie", src: "songs/Banana Pie.ogg", img: "records/Josh.gif" },
-    { name: "Clint Eastwood", src: "songs/Clint Eastwood.ogg", img: "records/Austin.gif" },
-    { name: "DARE (Radio Edit)", src: "songs/DARE (Radio Edit).ogg", img: "records/Austin.gif" },
-    { name: "Feel Good Inc.", src: "songs/Feel Good Inc..ogg", img: "records/Austin.gif" }
+    { name: "Clint Eastwood", src: "songs/Clint Eastwood.ogg", img: "records/Josh.gif" },
+    { name: "DARE (Radio Edit)", src: "songs/DARE (Radio Edit).ogg", img: "records/Josh.gif" },
+    { name: "Feel Good Inc.", src: "songs/Feel Good Inc..ogg", img: "records/Josh.gif" },
+    { name: "Stay Strapped (Not SpongeBob)", src: "songs/Stay Strapped (Not SpongeBob).ogg", img: "records/Josh.gif" }
 
   
 
