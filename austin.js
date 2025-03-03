@@ -52,7 +52,8 @@ const songs = [
 { name: "Tadow", src: "songs/Tadow.ogg", img: "records/Austin.gif" },
 { name: "Come as You are", src: "songs/Come as you are (online-audio-converter.com).ogg", img: "records/Austin.gif" },
 { name: "Faster car", src: "songs/Faster car.ogg", img: "records/Austin.gif" },
-{ name: "Hex", src: "songs/Hex.ogg", img: "records/Austin.gif" }
+{ name: "Hex", src: "songs/Hex.ogg", img: "records/Austin.gif" },
+{ name : "Love", src: "songs/Love.ogg", img: "records/Austin.gif" }   
    
 ];
 let currentSongIndex = 0;
