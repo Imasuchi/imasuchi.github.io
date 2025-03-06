@@ -2,7 +2,6 @@ const audioPlayer = document.getElementById('audio-player');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
-const previousBtn = document.getElementById('previous-btn');
 const songs = [
 { name: "From the Start", src: "songs/From the Start.ogg", img: "records/Austin.gif" }, 
 { name: "The Bird Song", src: "songs/The Bird Song.ogg", img: "records/Austin.gif" }, 
@@ -105,16 +104,6 @@ function nextSong() {
     } else {
         currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
         loadSong(currentSongIndex, true); // Load and play the next song
-    }
-}
-
-function previousSong() {
-    console.log('Previous button clicked');
-    if (isShuffleMode) {
-        shuffleSong();
-    } else {
-        currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
-        loadSong(currentSongIndex, true); // Load and play the previous song
     }
 }
 
