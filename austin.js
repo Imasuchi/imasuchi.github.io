@@ -2,6 +2,7 @@ const audioPlayer = document.getElementById('audio-player');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const nextBtn = document.getElementById('next-btn');
 const spinImage = document.getElementById('spin-image');
+const previousbtn = document.getElementById('previous-btn');
 const songs = [
 { name: "From the Start", src: "songs/From the Start.ogg", img: "records/Austin.gif" }, 
 { name: "The Bird Song", src: "songs/The Bird Song.ogg", img: "records/Austin.gif" }, 
@@ -99,6 +100,16 @@ function nextSong() {
     }
 }
 
+function previoussong() {
+    console.log('Previous button clicked');
+    if (isShuffleMode) {
+        shuffleSong();
+    } else {
+        currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex - 1;
+        loadSong(currentSongIndex, true); // Load and play the last song
+    }
+}
+
 function startSpinning() {
     spinImage.classList.add('spinning');
     spinImage.classList.remove('paused');
@@ -111,6 +122,7 @@ function stopSpinning() {
 
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
+previousBtn.addEventListener('click', previoussong);
 audioPlayer.addEventListener('play', startSpinning);
 audioPlayer.addEventListener('pause', stopSpinning);
 audioPlayer.addEventListener('ended', function() {
