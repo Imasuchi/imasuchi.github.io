@@ -53,28 +53,20 @@ const songs = [
 { name: "Come as You are", src: "songs/Come as you are (online-audio-converter.com).ogg", img: "records/Austin.gif" },
 { name: "Faster car", src: "songs/Faster car.ogg", img: "records/Austin.gif" },
 { name: "Hex", src: "songs/Hex.ogg", img: "records/Austin.gif" },
-{ name : "Love", src: "songs/Love.ogg", img: "records/Austin.gif" } 
+{ name : "Love", src: "songs/Love.ogg", img: "records/Austin.gif" }   
+   
 ];
-
 let currentSongIndex = 0;
 let playedSongs = [];
 let isShuffleMode = false;
 
 function loadSong(index, autoPlay = false) {
-    try {
-        console.log('Loading song:', songs[index].name);
-        audioPlayer.src = songs[index].src;
-        spinImage.src = songs[index].img; 
-        updateNowPlaying(); // Update the Now Playing section
-        if (autoPlay) {
-            audioPlayer.play().catch(error => {
-                console.error('Playback error:', error);
-                alert('An error occurred while trying to play the audio. Please try again.');
-            });
-        }
-    } catch (error) {
-        console.error('Error loading song:', error);
-        alert('An error occurred while loading the song. Please check the console for details.');
+    console.log('Loading song:', songs[index].name);
+    audioPlayer.src = songs[index].src;
+    spinImage.src = songs[index].img; 
+    updateNowPlaying(); // Update the Now Playing section
+    if (autoPlay) {
+        audioPlayer.play().catch(error => console.error('Playback error:', error));
     }
 }
 
@@ -119,7 +111,6 @@ function stopSpinning() {
 
 shuffleBtn.addEventListener('click', shuffleSong);
 nextBtn.addEventListener('click', nextSong);
-previousBtn.addEventListener('click', previousSong);
 audioPlayer.addEventListener('play', startSpinning);
 audioPlayer.addEventListener('pause', stopSpinning);
 audioPlayer.addEventListener('ended', function() {
@@ -127,6 +118,7 @@ audioPlayer.addEventListener('ended', function() {
     nextSong(); // Automatically play the next song when the current one ends
 });
 
+
 // Load the first song on page load without autoplay
 loadSong(currentSongIndex, false); 
-updateNowPlaying(); // Set false to prevent autoplay on page load 
+updateNowPlaying(); // Set false to prevent autoplay on page load
